@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GG - Gestão Gastrô</title>
+
+  <!--  Importação do Manifesto  -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-title" content="GG">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!--  Importação do Manifesto  -->
+  <link rel="icon" type="image/png" href="/assets/image/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/icons/apple-icon-180x180.png">
+
+  <!--  Importação das Fontes & Estilos -->
+  <link href="./assets/css/styles.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+</head>
+
+<body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+      .then(function() {
+        console.log('Service Worker Registrado');
+      });
+    }
+  </script>
+
+  <!-- Barra de Navegação -->
+  <nav class="nav">
+    <a href="#" class="nav__link nav__link--active">
+      <i class="material-icons nav__icon">receipt</i>
+      <span class="nav__text">Pedidos</span>
+    </a>
+    <a href="#" class="nav__link nav__link--desabled">
+      <i class="material-icons nav__icon">local_dining</i>
+      <span class="nav__text">Produtos</span>
+    </a>
+    <a href="#" class="nav__link nav__link--desabled">
+      <i class="material-icons nav__icon">people_alt</i>
+      <span class="nav__text">Clientes</span>
+    </a>
+    <a href="#" class="nav__link nav__link--desabled">
+      <i class="material-icons nav__icon">settings_suggest</i>
+      <span class="nav__text">Perfil</span>
+    </a>
+  </nav>
+  <!-- Fim da Barra de Navegação -->
+
+  <!-- Listagem de Pedidos -->
+  <div class="card mb-5">
+    <div class="card-body">
+      <h3 class="text-center font-weight-bold text-secondary">Pedidos</h3>
+      <!-- Menu de vizualização de itens em aberto e finalizados -->
+      <div class="row mt-4">
+        <div class="col-5">
+          <button type="button" class="btn text-secondary">
+            <div class="row mt-1">
+              <span class="btn-inner--icon mr-2"><i class="material-icons nav__icon">pending_actions</i></span>
+              Em Aberto
+            </div>
+          </button>
+        </div>
+        <div class="col-2 mt-2">
+          <h4 class="text-center text-secondary">|</h4>
+        </div>
+        <div class="col-5">
+          <button type="button" class="btn text-secondary">
+            <div class="row mt-1">
+              <span class="btn-inner--icon mr-2"><i class="material-icons nav__icon">alarm_on</i></span>
+              Concluído
+            </div>
+          </button>
+        </div>
+      </div>
+      <!-- Fim menu de vizualização de pedidos em aberto e concluídos -->
+    </div>
+  </div>
+
+  <div class="mt-5" style="opacity: 0.5;">
+    <div class="d-flex justify-content-center mb-3">
+      <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_ylfrzvzt.json"
+      style="width: 225px; height: 225px;"
+      background="rgba(255, 255, 255, 0)"
+      mode="bounce"
+      speed="1"
+      autoplay
+      />
+    </div>
+    <h4 class="text-center font-weight-bold text-secondary">Não existem pedidos</h4>
+  </div>
+  <!-- Fim da Listagem de Pedidos -->
+
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
