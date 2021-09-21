@@ -2002,8 +2002,8 @@ pre code {
   color: #8898aa;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #cad1d7;
-  border-radius: 0.25rem;
+  border: 1.5px solid #A7A8AE;
+  border-radius: 0.50rem;
   box-shadow: none;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -4060,16 +4060,16 @@ input[type="button"].btn-block {
 .input-group-text {
   display: flex;
   align-items: center;
-  padding: 0.625rem 0.75rem;
+  padding: 0.300rem 0.75rem;
   margin-bottom: 0;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #adb5bd;
+  color: #A7A8AE;
   text-align: center;
   white-space: nowrap;
   background-color: #fff;
-  border: 1px solid #cad1d7;
+  border: 1.5px solid #A7A8AE;
   border-radius: 0.25rem;
 }
 
@@ -5121,6 +5121,10 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
+.card-radius {
+  border-radius: 0.80rem !important;
+}
+
 .card>hr {
   margin-right: 0;
   margin-left: 0;
@@ -5138,7 +5142,7 @@ input[type="button"].btn-block {
 
 .card-body {
   flex: 1 1 auto;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .card-title {
@@ -7565,6 +7569,15 @@ button.bg-darker:focus {
 
 .rounded-pill {
   border-radius: 50rem !important;
+}
+
+.rounded-fixed {
+  position: fixed !important;
+  bottom: 5rem !important;
+  right: 0.5rem !important;
+  background: #2152FF; 
+  background: -webkit-linear-gradient(to top, #21D4FD, #2152FF); 
+  background: linear-gradient(to top, #21D4FD, #2152FF);
 }
 
 .rounded-0 {

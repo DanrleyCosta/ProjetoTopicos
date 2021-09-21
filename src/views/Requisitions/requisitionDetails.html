@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GG - Gestão Gastrô</title>
+
+  <!--  Importação do Manifesto  -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-title" content="GG">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!--  Importação do Manifesto  -->
+  <link rel="icon" type="image/png" href="/assets/image/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/icons/apple-icon-180x180.png">
+
+  <!--  Importação das Fontes & Estilos -->
+  <link href="../../assets/css/styles.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+</head>
+
+<body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+      .then(function() {
+        console.log('Service Worker Registrado');
+      });
+    }
+  </script>
+
+  <!-- Barra de Navegação -->
+  <nav class="nav">
+    <a href="#" class="nav__link nav__link--active">
+      <i class="material-icons nav__icon">receipt</i>
+      <span class="nav__text font-weight-bold">Pedidos</span>
+    </a>
+    <a href="#" class="nav__link nav__link--desabled">
+      <i class="material-icons nav__icon">local_dining</i>
+      <span class="nav__text">Produtos</span>
+    </a>
+    <a href="#" class="nav__link nav__link--desabled">
+      <i class="material-icons nav__icon">people_alt</i>
+      <span class="nav__text">Clientes</span>
+    </a>
+    <a href="#" class="nav__link nav__link--desabled">
+      <i class="material-icons nav__icon">settings_suggest</i>
+      <span class="nav__text">Perfil</span>
+    </a>
+  </nav>
+  <!-- Fim da Barra de Navegação -->
+
+  <!-- Label Novo Pedido -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <a href="../../../index.html" class="btn btn-link text-secondary" style="padding: 0;">
+        <h6 class="text-left font-weight-bold text-secondary mt-1">
+          <img src="/src/assets/image/west_arrow.svg" alt="">
+          <small class="font-weight-bold">Voltar</small>
+        </h6>
+      </a>
+      <h4 class="text-center font-weight-bold text-secondary">
+        Detalhes do Pedido
+      </h4>
+    </div>
+  </div>
+  <!-- Fim da Label Novo Pedido -->
+
+  <!-- Form Novo Pedido -->
+  <div class="card card-radius m-3">
+    <div class="card-body">
+      <div class="mt-4">
+        <h6 class="d-block font-weight-bold mb-2">Cliente:</h6>
+        <p>
+          <small class="text-info"><i class="material-icons nav__icon mt-1">face</i></small>
+          Anakin Skywalker
+        </p>
+        <p>
+          <small class="text-success"><i class="material-icons nav__icon mt-1">perm_phone_msg</i></small>
+          (31) 9 9999-9999
+        </p>
+        <p>
+          <small class="text-danger"><i class="material-icons nav__icon mt-1">place</i></small>
+          Rua Joaquim Fernandes Campos, 145 - Savassi/BH
+        </p>
+      </div>
+      <div class="mt-4">
+        <h6 class="d-block font-weight-bold mb-2">Produto(s):</h6>
+        <p>Bolo nega Maluca</p>
+      </div>
+      <div class="mt-4 mb-5">
+        <h6 class="d-block font-weight-bold mb-2">Data de Entrega:</h6>
+        <p>10/10/2021 às 10 horas</p>
+      </div>
+      <div class="d-flex justify-content-center mt-5 mb-3">
+        <button type="submit" class="btn btn-danger">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <div class="pb-5 mb-2"></div>
+  <!-- Fim Form Novo Pedido -->
+
+  <script src="../assets/js/app.js"></script>
+</body>
+
+</html>
