@@ -31,7 +31,7 @@
 <body>
   <!-- Barra de Navegação -->
   <nav class="nav">
-    <a href="./requisitionDetails.html" class="nav__link nav__link--active">
+    <a href="../../../index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">receipt</i>
       <span class="nav__text font-weight-bold">Pedidos</span>
     </a>
@@ -39,7 +39,7 @@
       <i class="material-icons nav__icon">local_dining</i>
       <span class="nav__text">Produtos</span>
     </a>
-    <a href="../Clients/index.html" class="nav__link nav__link--desabled">
+    <a href="../Clients/index.html" class="nav__link nav__link--active">
       <i class="material-icons nav__icon">people_alt</i>
       <span class="nav__text">Clientes</span>
     </a>
@@ -50,47 +50,62 @@
   </nav>
   <!-- Fim da Barra de Navegação -->
 
-  <!-- Label Novo Pedido -->
+  <!-- Label Clientes -->
   <div class="card mb-3">
     <div class="card-body">
-      <a href="../../../index.html" class="btn btn-link text-secondary" style="padding: 0;">
-        <h6 class="text-left font-weight-bold text-secondary mt-1">
-          <img src="/src/assets/image/west_arrow.svg" alt="">
-          <small class="font-weight-bold">Voltar</small>
-        </h6>
-      </a>
       <h4 class="text-center font-weight-bold text-secondary">
-        Detalhes do Pedido
+        <i class="material-icons nav__icon">people_alt</i>
+        Clientes
       </h4>
     </div>
   </div>
-  <!-- Fim da Label Novo Pedido -->
+  <!-- Fim Label Clientes -->
 
-  <!-- Form Novo Pedido -->
+  <a href="./formClients.html" class="d-flex justify-content-center text-justify btn btn-info ml-5 mr-5">
+    <i class="material-icons nav__icon mr-2">group_add</i>
+    Adicionar Cliente
+  </a>
+
+  <!-- Animação representando que não existem dados -->
+  <!-- <div class="mt-5 opacity-5">
+    <div class="d-flex justify-content-center mb-3">
+      <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_p2etvrue.json"
+      style="width: 225px; height: 225px;"
+      background="rgba(255, 255, 255, 0)"
+      mode="bounce"
+      speed="1"
+      autoplay
+      />
+    </div>
+    <h4 class="text-center font-weight-bold text-secondary">Não existem clientes</h4>
+  </div> -->
+  <!-- Fim animação representando que não existem dados -->
+
+  <!-- Listagem de Clientes -->
   <div class="card card-radius m-3">
     <div class="card-body">
-      <div class="mt-4">
-        <h6 class="d-block font-weight-bold mb-2">Cliente:</h6>
-        <p>Anakin Skywalker</p>
-        <p>(31) 9 9999-9999</p>
-        <p>Rua Joaquim Fernandes Campos, 145 - Savassi/BH</p>
-      </div>
-      <div class="mt-4">
-        <h6 class="d-block font-weight-bold mb-2">Produto(s):</h6>
-        <p>Bolo nega Maluca</p>
-      </div>
-      <div class="mt-4 mb-5">
-        <h6 class="d-block font-weight-bold mb-2">Data de Entrega:</h6>
-        <p>10/10/2021 às 10 horas</p>
-      </div>
-      <div class="d-flex justify-content-center mt-5 mb-3">
-        <button type="submit" class="btn btn-danger">Cancelar</button>
+      <div class="row">
+        <div class="col-3">
+          <img src="/src/assets/image/user.svg" alt="">
+        </div>
+        <div class="col-9">
+          <blockquote class="blockquote mb-0">
+            <h5 class="font-weight-bold text-justify">Anakin Skywalker</h5>
+            <p class="font-weight-bold text-justify">(31) 9 9999-9999</p>
+            <footer class="text-secondary d-flex justify-content-end">
+              <a href="./detailsClients.html"
+                class="btn btn-icon-only rounded-circle text-secondary">
+                <i class="material-icons nav__icon mt-1">help_outline</i>
+              </a>
+            </footer>
+          </blockquote>
+        </div>
       </div>
     </div>
   </div>
-  <div class="pb-5 mb-2"></div>
-  <!-- Fim Form Novo Pedido -->
+  <!-- Fim da Listagem de Clientes -->
 
+  <div class="pb-4"></div>
   <script src="../../assets/js/app.js"></script>
 </body>
 

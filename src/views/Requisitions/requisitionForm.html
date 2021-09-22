@@ -9,23 +9,23 @@
   <title>GG - Gestão Gastrô</title>
 
   <!--  Importação do Manifesto  -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="../../../manifest.json">
   <meta name="apple-mobile-web-app-title" content="GG">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <!--  Importação do Manifesto  -->
-  <link rel="icon" type="image/png" href="/assets/image/icons/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/icons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/icons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/icons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../assets/image/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../assets/image/icons/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../assets/image/icons/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../assets/image/icons/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/image/icons/apple-icon-180x180.png" />
 
   <!--  Importação das Fontes & Estilos -->
   <link href="../../assets/css/styles.css" rel="stylesheet" />
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
@@ -40,15 +40,15 @@
 
   <!-- Barra de Navegação -->
   <nav class="nav">
-    <a href="#" class="nav__link nav__link--active">
+    <a href="./requisitionForm.html" class="nav__link nav__link--active">
       <i class="material-icons nav__icon">receipt</i>
       <span class="nav__text font-weight-bold">Pedidos</span>
     </a>
-    <a href="#" class="nav__link nav__link--desabled">
+    <a href="../Products/index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">local_dining</i>
       <span class="nav__text">Produtos</span>
     </a>
-    <a href="#" class="nav__link nav__link--desabled">
+    <a href="../Clients/index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">people_alt</i>
       <span class="nav__text">Clientes</span>
     </a>
@@ -68,7 +68,6 @@
           <small class="font-weight-bold">Voltar</small>
         </h6>
       </a>
-
       <h4 class="text-center font-weight-bold text-secondary">
         Novo Pedido
       </h4>
@@ -88,12 +87,22 @@
         </div>
       </div>
       <div class="mt-4">
-        <small class="d-block mb-2">Produto:</small>
-        <div class="form-group">
-          <select class="form-control" id="select">
-            <option selected>Selecione o(os) produto(s)</option>
+        <small class="d-block font-weight-bold mb-2">Produto:</small>
+        <div class="row">
+          <select class="form-control col-9 ml-3">
+            <option selected>Selecione</option>
           </select>
+          <div class="d-flex justify-content-end col-2 mt-2 mb-3">
+            <button class="btn btn-sm btn-icon-only">
+              <i class="material-icons nav__icon text-danger">delete</i>
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="d-flex justify-content-end mt-2 mb-3">
+        <button class="btn btn-success btn-icon-only">
+          <i class="material-icons nav__icon"><h4 class="text-white">add</h4></i>
+        </button>
       </div>
       <div class="mt-4 mb-5">
         <small class="d-block mb-2">Data de Entrega:</small>
@@ -115,7 +124,7 @@
   <div class="pb-5 mb-2"></div>
   <!-- Fim Form Novo Pedido -->
 
-  <script src="../assets/js/app.js"></script>
+  <script src="../../assets/js/app.js"></script>
 </body>
 
 </html>

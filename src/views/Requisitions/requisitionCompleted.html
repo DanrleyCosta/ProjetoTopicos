@@ -9,46 +9,37 @@
   <title>GG - Gestão Gastrô</title>
 
   <!--  Importação do Manifesto  -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="../../../manifest.json">
   <meta name="apple-mobile-web-app-title" content="GG">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <!--  Importação do Manifesto  -->
-  <link rel="icon" type="image/png" href="/assets/image/icons/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/icons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/icons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/icons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" href="../../assets/image/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../assets/image/icons/apple-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../assets/image/icons/apple-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../assets/image/icons/apple-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/image/icons/apple-icon-180x180.png" />
 
   <!--  Importação das Fontes & Estilos -->
-  <link href="./src/assets/css/styles.css" rel="stylesheet" />
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link href="../../assets/css/styles.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
-      .then(function() {
-        console.log('Service Worker Registrado');
-      });
-    }
-  </script>
-
   <!-- Barra de Navegação -->
   <nav class="nav">
-    <a href="./index.html" class="nav__link nav__link--active">
+    <a href="../../../index.html" class="nav__link nav__link--active">
       <i class="material-icons nav__icon">receipt</i>
       <span class="nav__text font-weight-bold">Pedidos</span>
     </a>
-    <a href="./src/views/Products/index.html" class="nav__link nav__link--desabled">
+    <a href="../Products/index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">local_dining</i>
       <span class="nav__text">Produtos</span>
     </a>
-    <a href="./src/views/Clients/index.html" class="nav__link nav__link--desabled">
+    <a href="../Clients/index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">people_alt</i>
       <span class="nav__text">Clientes</span>
     </a>
@@ -69,7 +60,7 @@
       <!-- Menu de vizualização de itens em aberto e finalizados -->
       <div class="row mt-4">
         <div class="col-5">
-          <a href="./index.html"class="btn text-success">
+          <a href="../../../index.html"class="btn text-secondary">
             <div class="row justify-content-center">
               <span class="btn-inner--icon mr-2"><i class="material-icons nav__icon">pending_actions</i></span>
               Em Aberto
@@ -80,7 +71,7 @@
           <h4 class="text-center text-secondary">|</h4>
         </div>
         <div class="col-5">
-          <a href="./src/views/Requisitions/requisitionCompleted.html"class="btn text-secondary">
+          <a href="./requisitionCompleted.html"class="btn text-success">
             <div class="row justify-content-center">
               <span class="btn-inner--icon mr-2"><i class="material-icons nav__icon">alarm_on</i></span>
               Fechados
@@ -113,7 +104,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-3">
-          <img src="/src/assets/image/receipt_long.svg" alt="">
+          <img src="/src/assets/image/event_checked.svg" alt="">
         </div>
         <div class="col-9">
           <blockquote class="blockquote mb-0">
@@ -121,7 +112,7 @@
             <p class="font-weight-bold text-justify text-muted">19 de novembro às 18hrs</p>
             <p class="font-weight-bold text-justify text-muted">Rua Jornalista João Bosco, 197 - Nova Cintra</p>
             <footer class="text-secondary d-flex justify-content-end">
-              <a href="./src/views/Requisitions/requisitionDetails.html"
+              <a href="./requisitionDetails.html"
                 class="btn btn-icon-only rounded-circle">
                 <i class="material-icons nav__icon mt-1">help_outline</i>
               </a>
@@ -133,13 +124,8 @@
   </div>
   <!-- Fim da Listagem de Pedidos -->
 
-  <a href="./src/views/Requisitions/requisitionForm.html"
-    class="btn btn-lg btn-info btn-icon-only rounded-circle rounded-fixed">
-    <i class="material-icons nav__icon mt-1"><h3 class="text-white">add</h3></i>
-  </a>
-
   <div class="pb-5 pt-5"></div>
-  <script src="./src/assets/js/app.js"></script>
+  <script src="../../assets/js/app.js"></script>
 </body>
 
 </html>
