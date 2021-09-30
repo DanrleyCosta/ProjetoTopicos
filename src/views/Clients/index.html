@@ -9,7 +9,7 @@
   <title>GG - Gestão Gastrô</title>
 
   <!--  Importação do Manifesto  -->
-  <link rel="manifest" href="../../../manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <meta name="apple-mobile-web-app-title" content="GG">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -67,7 +67,7 @@
   </a>
 
   <!-- Animação representando que não existem dados -->
-  <!-- <div class="mt-5 opacity-5">
+  <div id="notClients" class="mt-5 opacity-5 hidden">
     <div class="d-flex justify-content-center mb-3">
       <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_p2etvrue.json"
       style="width: 225px; height: 225px;"
@@ -78,35 +78,18 @@
       />
     </div>
     <h4 class="text-center font-weight-bold text-secondary">Não existem clientes</h4>
-  </div> -->
+  </div>
   <!-- Fim animação representando que não existem dados -->
 
   <!-- Listagem de Clientes -->
-  <div class="card card-radius m-3">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-3">
-          <img src="/src/assets/image/user.svg" alt="">
-        </div>
-        <div class="col-9">
-          <blockquote class="blockquote mb-0">
-            <h5 class="font-weight-bold text-justify">Anakin Skywalker</h5>
-            <p class="font-weight-bold text-justify">(31) 9 9999-9999</p>
-            <footer class="text-secondary d-flex justify-content-end">
-              <a href="./detailsClients.html"
-                class="btn btn-icon-only rounded-circle text-secondary">
-                <i class="material-icons nav__icon mt-1">help_outline</i>
-              </a>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- Executada atraves de um loop em src/assets/js/template.js:6 -->
   <!-- Fim da Listagem de Clientes -->
 
   <div class="pb-4"></div>
-  <script src="../../assets/js/app.js"></script>
+
+  <script src="../../assets/js/libs/jquery.min.js"></script>
+  <script src="../../assets/js/client.js"></script>
+  <script src="../../assets/js/template.js"></script>
 </body>
 
 </html>

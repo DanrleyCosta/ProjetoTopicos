@@ -1,5 +1,12 @@
 const cacheName = 'gg-conf-v1';
-const staticAssets = ['./', './index.html', './assets/js/app.js', './assets/css/styles.css'];
+const staticAssets = [
+  './',
+  './index.html',
+  '../../views',
+  './assets/js',
+  '../loading',
+  './assets/css/styles.css'
+];
 
 self.addEventListener('install', async event => {
 	const cache = await caches.open(cacheName);

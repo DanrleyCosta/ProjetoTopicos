@@ -9,7 +9,7 @@
   <title>GG - Gestão Gastrô</title>
 
   <!--  Importação do Manifesto  -->
-  <link rel="manifest" href="../../../manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <meta name="apple-mobile-web-app-title" content="GG">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -31,7 +31,7 @@
 <body>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
+      navigator.serviceWorker.register('../../assets/js/sw.js')
       .then(function() {
         console.log('Service Worker Registrado');
       });
@@ -111,7 +111,8 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="material-icons nav__icon">date_range</i></span>
             </div>
-            <input class="form-control" type="text" placeholder="Selecione a data de entrega" readonly="readonly">
+            <input class="form-control datepicker form-control"
+              type="text" placeholder="Selecione a data de entrega" readonly="readonly">
           </div>
         </div>
       </div>
@@ -123,7 +124,7 @@
   </div>
   <div class="pb-5 mb-2"></div>
   <!-- Fim Form Novo Pedido -->
-
+  <script src="../../assets/js/libs/jquery.min.js"></script>
   <script src="../../assets/js/app.js"></script>
 </body>
 

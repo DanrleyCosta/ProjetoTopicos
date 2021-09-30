@@ -9,17 +9,17 @@
   <title>GG - Gestão Gastrô</title>
 
   <!--  Importação do Manifesto  -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <meta name="apple-mobile-web-app-title" content="GG">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <!--  Importação do Manifesto  -->
-  <link rel="icon" type="image/png" href="/assets/image/icons/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/icons/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/icons/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/icons/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/src/assets/image/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/src/assets/image/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/src/assets/image/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/src/assets/image/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/image/icons/apple-icon-180x180.png">
 
   <!--  Importação das Fontes & Estilos -->
   <link href="./src/assets/css/styles.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
 <body>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
+      navigator.serviceWorker.register('/src/assets/js/sw.js')
       .then(function() {
         console.log('Service Worker Registrado');
       });
@@ -119,7 +119,7 @@
           <blockquote class="blockquote mb-0">
             <h5 class="font-weight-bold text-justify">Bolo de Laranja</h5>
             <p class="font-weight-bold text-justify text-muted">19 de novembro às 18hrs</p>
-            <p class="font-weight-bold text-justify text-muted">Rua Jornalista João Bosco, 197 - Nova Cintra</p>
+            <p class="font-weight-bold text-justify text-muted">Rua Joaquim Fernandes Campos, 145 - Savassi/BH</p>
             <footer class="text-secondary d-flex justify-content-end">
               <a href="./src/views/Requisitions/requisitionDetails.html"
                 class="btn btn-icon-only rounded-circle">
@@ -139,6 +139,8 @@
   </a>
 
   <div class="pb-5 pt-5"></div>
+  
+  <script src="./src/assets/js/libs/jquery.min.js"></script>
   <script src="./src/assets/js/app.js"></script>
 </body>
 

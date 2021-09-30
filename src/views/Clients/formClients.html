@@ -9,7 +9,7 @@
   <title>GG - Gestão Gastrô</title>
 
   <!--  Importação do Manifesto  -->
-  <link rel="manifest" href="../../../manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <meta name="apple-mobile-web-app-title" content="GG">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -68,59 +68,71 @@
 
   <!-- Form Novo Cliente -->
   <div class="card card-radius m-3">
-    <div class="card-body">
-      <div class="mt-4">
+    <div class="card-body form-group">
+      <form>
         <small class="d-block font-weight-bold mb-2">Nome:</small>
-        <div class="form-group">
-          <input type="text" placeholder="Farinha de Trigo" class="form-control">
-        </div>
-      </div>
-      <div class="mt-4">
+        <input required autofocus id="name" type="text" name="client_name" class="form-control mb-4">
+
         <small class="d-block font-weight-bold mb-2">Telefone:</small>
-        <div class="form-group">
-          <input type="text" placeholder="(99) 9 9999-9999" class="form-control">
-        </div>
-      </div>
-      <div class="mt-4">
+        <input required id="phone" type="text" name="client_phone" class="form-control mb-4">
+        <small class="errors_phone mb-4 mt-2"></small>
+
         <small class="d-block font-weight-bold mb-2">CEP:</small>
-        <div class="form-group">
-          <input type="text" placeholder="00000-000" class="form-control">
-        </div>
-      </div>
-      <div class="mt-4">
+        <input required id="cep" type="text" name="client_cep" class="form-control mb-4">
+        <p id="errors_cep" class="mb-4 mt-2"></p>
+
         <small class="d-block font-weight-bold mb-2">Rua:</small>
-        <div class="form-group">
-          <input type="text" class="form-control">
-        </div>
-      </div>
-      <div class="mt-4">
+        <input required id="street" type="text" name="client_street" class="form-control mb-4">
+
         <small class="d-block font-weight-bold mb-2">Número:</small>
-        <div class="form-group">
-          <input type="text" class="form-control">
-        </div>
-      </div>
-      <div class="mt-4">
+        <input required id="number" type="text" name="client_number" class="form-control mb-4">
+
         <small class="d-block font-weight-bold mb-2">Bairro:</small>
-        <div class="form-group">
-          <input type="text" class="form-control">
-        </div>
-      </div>
-      <div class="mt-4">
+        <input required id="district" type="text" name="client_district" class="form-control mb-4">
+
         <small class="d-block font-weight-bold mb-2">Cidade:</small>
-        <div class="form-group">
-          <input type="text" class="form-control">
+        <input required id="city" type="text" name="client_city" class="form-control mb-4">
+
+        <div class="d-flex justify-content-center mt-5 mb-3">
+          <a href="./index.html" class="btn btn-danger">Cancelar</a>
+          <button id="btnNewClient" type="submit" class="btn btn-success">Concluir</button>
         </div>
-      </div>
-      <div class="d-flex justify-content-center mt-5 mb-3">
-        <a href="./index.html" class="btn btn-danger">Cancelar</a>
-        <button type="submit" class="btn btn-success">Concluir</button>
-      </div>
+      </form>
     </div>
   </div>
   <div class="pb-5 mb-2"></div>
   <!-- Fim Form Novo Cliente -->
 
-  <script src="../../assets/js/app.js"></script>
+  <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="modal-default" style="display: none;" aria-modal="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="d-flex justify-content-center">
+            <div class="mt-5">
+              <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pwppxjbo.json"
+                style="width: 225px; height: 225px;"
+                background="rgba(255, 255, 255, 0)"
+                speed="1"
+                autoplay
+              />
+            </div>
+          </div>
+          <div class="mt-5">
+            <h4 class="text-center text-success font-weight-bold">Os dados foram salvos com sucesso!</h4>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="return" type="button" class="btn btn-info" data-dismiss="modal">Ver Clientes</button>
+          <button id="new" type="button" class="btn btn-success ml-auto" data-dismiss="modal">Novo Cliente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/libs/jquery.min.js"></script>
+  <script src="../../assets/js/libs/bootstrap.min.js"></script>
+  <script src="../../assets/js/libs/jquery.mask.js"></script>
+  <script src="../../assets/js/client.js"></script>
 </body>
 
 </html>
