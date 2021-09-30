@@ -39,9 +39,14 @@ clientVerify = () => {
     event.preventDefault()
     data = new FormData(event.target)
     values = Object.fromEntries(data.entries())
+    console.log(values)
 
-    if (values.client_phone.length < 8) {
-    } else if (values.client_cep.split('-').join('').length < 8) {
+    if (values.phone.length < 8) {
+      document.getElementById('phone').classList.remove('mb-4')
+
+      create_error = document.getElementById('errors_phone')
+      create_error.innerHTML= '<small class="text-danger font-weight-bold">O telefone deve possuir no min. 8 caracteres</small>'
+    } else if (values.cep.split('-').join('').length < 8) {
       document.getElementById('cep').classList.remove('mb-4')
 
       create_error = document.getElementById('errors_cep')

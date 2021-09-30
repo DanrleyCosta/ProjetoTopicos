@@ -78,18 +78,17 @@
   <!-- Form Novo Pedido -->
   <div class="card card-radius m-3">
     <div class="card-body">
-      <div class="mt-4">
+      <form>
         <small class="d-block font-weight-bold mb-2">Cliente:</small>
         <div class="form-group">
-          <select class="form-control" id="selectClient">
+          <select id="clientList" class="form-control" id="selectClient">
             <option selected>Selecione um cliente</option>
           </select>
         </div>
-      </div>
-      <div class="mt-4">
+        
         <small class="d-block font-weight-bold mb-2">Produto:</small>
         <div class="row">
-          <select class="form-control col-9 ml-3">
+          <select id="productList" class="form-control col-9 ml-3">
             <option selected>Selecione</option>
           </select>
           <div class="d-flex justify-content-end col-2 mt-2 mb-3">
@@ -98,13 +97,12 @@
             </button>
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-end mt-2 mb-3">
-        <button class="btn btn-success btn-icon-only">
-          <i class="material-icons nav__icon"><h4 class="text-white">add</h4></i>
-        </button>
-      </div>
-      <div class="mt-4 mb-5">
+        <div class="d-flex justify-content-end mt-2 mb-3">
+          <button class="btn btn-success btn-icon-only">
+            <i class="material-icons nav__icon"><h4 class="text-white">add</h4></i>
+          </button>
+        </div>
+
         <small class="d-block mb-2">Data de Entrega:</small>
         <div class="form-group">
           <div class="input-group">
@@ -115,17 +113,45 @@
               type="text" placeholder="Selecione a data de entrega" readonly="readonly">
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-center mt-5 mb-3">
-        <a href="../../../index.html" class="btn btn-danger">Cancelar</a>
-        <button type="submit" class="btn btn-success">Concluir</button>
+
+        <div class="d-flex justify-content-center mt-5 mb-3">
+          <a href="../../../index.html" class="btn btn-danger">Cancelar</a>
+          <button type="submit" class="btn btn-success">Concluir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Fim Form Novo Pedido -->
+
+  <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="modal-default" style="display: none;" aria-modal="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="d-flex justify-content-center">
+            <div class="mt-5">
+              <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pwppxjbo.json"
+                style="width: 225px; height: 225px;"
+                background="rgba(255, 255, 255, 0)"
+                speed="1"
+                autoplay
+              />
+            </div>
+          </div>
+          <div class="mt-5">
+            <h4 class="text-center text-success font-weight-bold">Os dados foram salvos com sucesso!</h4>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="return" type="button" class="btn btn-info" data-dismiss="modal">Ver Pedidos</button>
+          <button id="new" type="button" class="btn btn-success ml-auto" data-dismiss="modal">Novo Pedido</button>
+        </div>
       </div>
     </div>
   </div>
-  <div class="pb-5 mb-2"></div>
-  <!-- Fim Form Novo Pedido -->
+
   <script src="../../assets/js/libs/jquery.min.js"></script>
-  <script src="../../assets/js/app.js"></script>
+  <script src="../../assets/js/requisition.js"></script>
+  <script src="../../assets/js/libs/bootstrap.min.js"></script>
 </body>
 
 </html>

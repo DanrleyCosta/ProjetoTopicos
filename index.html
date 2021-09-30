@@ -94,43 +94,22 @@
   <!-- Fim Label Pedido -->
 
   <!-- Animação representando que não existem dados -->
-  <!-- <div class="mt-5 opacity-5">
+  <div id="notRequisitions" class="mt-5 opacity-5 hidden">
     <div class="d-flex justify-content-center mb-3">
       <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_ylfrzvzt.json"
       style="width: 225px; height: 225px;"
       background="rgba(255, 255, 255, 0)"
       mode="bounce"
-      speed="1"
+      speed="2"
       autoplay
       />
     </div>
     <h4 class="text-center font-weight-bold text-secondary">Não existem pedidos</h4>
-  </div> -->
+  </div>
   <!-- Fim animação representando que não existem dados -->
 
   <!-- Listagem de Pedidos -->
-  <div class="card card-radius m-3">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-3">
-          <img src="/src/assets/image/receipt_long.svg" alt="">
-        </div>
-        <div class="col-9">
-          <blockquote class="blockquote mb-0">
-            <h5 class="font-weight-bold text-justify">Bolo de Laranja</h5>
-            <p class="font-weight-bold text-justify text-muted">19 de novembro às 18hrs</p>
-            <p class="font-weight-bold text-justify text-muted">Rua Joaquim Fernandes Campos, 145 - Savassi/BH</p>
-            <footer class="text-secondary d-flex justify-content-end">
-              <a href="./src/views/Requisitions/requisitionDetails.html"
-                class="btn btn-icon-only rounded-circle">
-                <i class="material-icons nav__icon mt-1">help_outline</i>
-              </a>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <!-- Fim da Listagem de Pedidos -->
 
   <a href="./src/views/Requisitions/requisitionForm.html"
@@ -138,10 +117,9 @@
     <i class="material-icons nav__icon mt-1"><h3 class="text-white">add</h3></i>
   </a>
 
-  <div class="pb-5 pt-5"></div>
-  
   <script src="./src/assets/js/libs/jquery.min.js"></script>
-  <script src="./src/assets/js/app.js"></script>
+  <script src="./src/assets/js/requisition.js"></script>
+  <script src="./src/assets/js/template.js"></script>
 </body>
 
 </html>

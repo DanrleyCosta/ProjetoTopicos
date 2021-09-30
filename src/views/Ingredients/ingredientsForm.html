@@ -70,38 +70,51 @@
   <div class="card card-radius m-3">
     <div class="card-body">
       <div class="mt-4">
-        <small class="d-block font-weight-bold mb-2">Nome:</small>
-        <div class="form-group">
-          <input type="text" placeholder="Farinha de Trigo" class="form-control">
-        </div>
-      </div>
-      <div class="mt-4">
-        <small class="d-block mb-2">Categoria:</small>
-        <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
-          <div class="custom-control custom-radio mb-3">
-            <input name="nao-perecivel" class="custom-control-input" checked="" type="radio">
-            <label class="custom-control-label" for="customRadio1">
-              <span>Não perecível</span>
-            </label>
+        <form>
+          <small class="d-block font-weight-bold mb-2">Nome:</small>
+          <input required autofocus id="name" name="name" type="text" placeholder="Farinha de Trigo" class="form-control">
+
+          <div class="d-flex justify-content-center mt-5 mb-3">
+            <a href="./index.html" class="btn btn-danger">Cancelar</a>
+            <button id="btnNewIngredient" type="submit" class="btn btn-success">Concluir</button>
           </div>
-          <div class="custom-control custom-radio mb-3">
-            <input name="perecivel" class="custom-control-input" type="radio">
-            <label class="custom-control-label" for="customRadio2">
-              <span>Perecível</span>
-            </label>
-          </div>
-        </div>
+        </form>
       </div>
-      <div class="d-flex justify-content-center mt-5 mb-3">
-        <a href="./index.html" class="btn btn-danger">Cancelar</a>
-        <button type="submit" class="btn btn-success">Concluir</button>
-      </div>
+
     </div>
   </div>
   <div class="pb-5 mb-2"></div>
   <!-- Fim Form Novo Pedido -->
 
-  <script src="../../assets/js/app.js"></script>
+  <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="modal-default" style="display: none;" aria-modal="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="d-flex justify-content-center">
+            <div class="mt-5">
+              <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pwppxjbo.json"
+                style="width: 225px; height: 225px;"
+                background="rgba(255, 255, 255, 0)"
+                speed="1"
+                autoplay
+              />
+            </div>
+          </div>
+          <div class="mt-5">
+            <h4 class="text-center text-success font-weight-bold">Os dados foram salvos com sucesso!</h4>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="return" type="button" class="btn btn-info" data-dismiss="modal">Ver Ingredientes</button>
+          <button id="new" type="button" class="btn btn-success ml-auto" data-dismiss="modal">Novo Ingrediente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/libs/jquery.min.js"></script>
+  <script src="../../assets/js/libs/bootstrap.min.js"></script>
+  <script src="../../assets/js/ingredients.js"></script>
 </body>
 
 </html>
