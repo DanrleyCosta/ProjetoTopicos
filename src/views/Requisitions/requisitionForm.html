@@ -52,9 +52,9 @@
       <i class="material-icons nav__icon">people_alt</i>
       <span class="nav__text">Clientes</span>
     </a>
-    <a href="#" class="nav__link nav__link--desabled">
+    <a href="/description.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">settings_suggest</i>
-      <span class="nav__text">Perfil</span>
+      <span class="nav__text">Descrição</span>
     </a>
   </nav>
   <!-- Fim da Barra de Navegação -->
@@ -81,14 +81,14 @@
       <form>
         <small class="d-block font-weight-bold mb-2">Cliente:</small>
         <div class="form-group">
-          <select id="clientList" class="form-control" id="selectClient">
+          <select id="clientList" name="client" class="form-control" id="selectClient">
             <option selected>Selecione um cliente</option>
           </select>
         </div>
         
         <small class="d-block font-weight-bold mb-2">Produto:</small>
         <div class="row">
-          <select id="productList" class="form-control col-9 ml-3">
+          <select id="productList" name="product" class="form-control col-9 ml-3">
             <option selected>Selecione</option>
           </select>
           <div class="d-flex justify-content-end col-2 mt-2 mb-3">
@@ -109,7 +109,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="material-icons nav__icon">date_range</i></span>
             </div>
-            <input class="form-control datepicker form-control"
+            <input id="delivery" name="delivery" class="form-control datepicker form-control"
               type="text" placeholder="Selecione a data de entrega" readonly="readonly">
           </div>
         </div>

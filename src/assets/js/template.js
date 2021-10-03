@@ -17,11 +17,12 @@ writeCardsClient = (clients) => {
               <h5 class="font-weight-bold">${client.data.name}</h5>
               <p class="font-weight-bold ">${client.data.phone}</p>
               <footer class="text-secondary d-flex justify-content-end">
-                <a href="./detailsClients.html"
-                  data-id=${client.data.id}
+                <button
+                  data-id="${client.id}"
+                  onClick="getClient(${client.id})"
                   class="btn btn-icon-only rounded-circle text-secondary">
                   <i class="material-icons nav__icon mt-1">help_outline</i>
-                </a>
+                </button>
               </footer>
             </blockquote>
           </div>
@@ -54,10 +55,18 @@ writeCardsIngredient = (ingredients) => {
             <blockquote class="blockquote mb-0">
               <h5 class="font-weight-bold text-justify">${ingredient.data.name}</h5>
               <footer class="text-secondary d-flex justify-content-end">
-                <a href="./ingredientsForm.html"
+                <button
+                  data-id="${ingredient.id}"
+                  onClick="removeIngredient(${ingredient.id})"
+                  class="btn btn-icon-only rounded-circle text-danger">
+                  <i class="material-icons nav__icon mt-1">delete</i>
+                </button>
+                <button
+                  data-id="${ingredient.id}"
+                  onClick="getIngredient(${ingredient.id})"
                   class="btn btn-icon-only rounded-circle text-secondary">
-                  <i class="material-icons nav__icon mt-1">help_outline</i>
-                </a>
+                  <i class="material-icons nav__icon mt-1">edit</i>
+                </button>
               </footer>
             </blockquote>
           </div>
@@ -90,10 +99,18 @@ writeCardsProduct = (products) => {
             <blockquote class="blockquote mb-0">
               <h5 class="font-weight-bold text-justify">${product.data.name}</h5>
               <footer class="text-secondary d-flex justify-content-end">
-                <a href="./productForm.html"
+                <button
+                  data-id="${product.id}"
+                  onClick="removeProduct(${product.id})"
+                  class="btn btn-icon-only rounded-circle text-danger">
+                  <i class="material-icons nav__icon mt-1">delete</i>
+                </button>
+                <button
+                  data-id="${product.id}"
+                  onClick="getProduct(${product.id})"
                   class="btn btn-icon-only rounded-circle text-secondary">
-                  <i class="material-icons nav__icon mt-1">help_outline</i>
-                </a>
+                  <i class="material-icons nav__icon mt-1">edit</i>
+                </button>
               </footer>
             </blockquote>
           </div>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GG - Gestão Gastrô</title>
+
+  <!--  Importação do Manifesto  -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-title" content="GG">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!--  Importação do Manifesto  -->
+  <link rel="icon" type="image/png" href="/src/assets/image/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/src/assets/image/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/src/assets/image/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/src/assets/image/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/image/icons/apple-icon-180x180.png">
+
+  <!--  Importação das Fontes & Estilos -->
+  <link href="./src/assets/css/styles.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+</head>
+
+<body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/src/assets/js/sw.js')
+      .then(function() {
+        console.log('Service Worker Registrado');
+      });
+    }
+  </script>
+
+  <!-- Barra de Navegação -->
+  <nav class="nav">
+    <a href="./index.html" class="nav__link nav__link--active">
+      <i class="material-icons nav__icon">receipt</i>
+      <span class="nav__text font-weight-bold">Pedidos</span>
+    </a>
+    <a href="./src/views/Products/index.html" class="nav__link nav__link--desabled">
+      <i class="material-icons nav__icon">local_dining</i>
+      <span class="nav__text">Produtos</span>
+    </a>
+    <a href="./src/views/Clients/index.html" class="nav__link nav__link--desabled">
+      <i class="material-icons nav__icon">people_alt</i>
+      <span class="nav__text">Clientes</span>
+    </a>
+    <a href="./description.html" class="nav__link nav__link--desabled">
+      <i class="material-icons nav__icon">settings_suggest</i>
+      <span class="nav__text">Descrição</span>
+    </a>
+  </nav>
+  <!-- Fim da Barra de Navegação -->
+
+  <!-- Label Pedidos -->
+  <div class="card mb-5">
+    <div class="card-body">
+      <h4 class="text-center font-weight-bold text-secondary">
+        <i class="material-icons nav__icon">settings_suggest</i>
+        Descrição
+      </h4>
+    </div>
+  </div>
+
+  <div class="card ml-4 mr-4 card-radius">
+    <div class="card-body">
+      <h5 class="mt-2 text-center font-weight-bold text-primary">
+        Descrição
+      </h5>
+      <hr />
+
+      <p class="mb-4 text-justify">
+        Esta aplicação é direcionada para micro
+        empreendedores e produtores do ramo alimentício.
+        Oferecendo opções para gestão de clientes, produtos e pedidos.
+      </p>
+      <hr />
+
+      <p class="text-center">
+        <a href="https://github.com/LeoGianluca/gestao-gastro" target="_blank" class="btn btn-sm btn-icon-only rounded-circle">
+          <img src="./src/assets/image/github.svg">
+        </a>
+        <br />
+        <small class="text-muted text-center mb-5">Versão 0.0.1</small>
+      </p>
+    </div>
+  </div>
+  <!-- Fim Label Pedido -->
+
+</body>
+
+</html>

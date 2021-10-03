@@ -1,13 +1,16 @@
 const current = window.location.href
 var clients = []
 
+urlParams = new URLSearchParams(window.location.search)
+getParams = urlParams.get('params')
+
 onload = () => {
   if (current.match('index')){
     listClient()
   } else if (current.match('Clients/detailsClients')) {
-    editClient()
+    datailsClient()
   }else {
-    onFormClients()
+    !getParams ? onFormClients() : editClient()
   }
 }
 
@@ -28,7 +31,11 @@ onFormClients = () => {
 
   $('#btnNewClient').click((event) => { clientVerify() })
 
-  $('#return').click((event) => { window.history.back() })
+  $('#return').click((event) => {
+    !getParams ? window.history.back() : window.location = '/src/views/Clients/index.html'
+  })
+
+  $('#home').click((event) => { window.history.back() })
 
   $('#new').click((event) => { window.location.reload() })
 }
@@ -39,7 +46,6 @@ clientVerify = () => {
     event.preventDefault()
     data = new FormData(event.target)
     values = Object.fromEntries(data.entries())
-    console.log(values)
 
     if (values.phone.length < 8) {
       document.getElementById('phone').classList.remove('mb-4')
@@ -52,8 +58,8 @@ clientVerify = () => {
       create_error = document.getElementById('errors_cep')
       create_error.innerHTML= '<small class="text-danger font-weight-bold">O CEP deve possuir 8 caracteres numéricos</small>'
     } else {
-      $("#loadingModal").modal()
-      newClient(values)
+      $('#loadingModal').modal()
+      !getParams ? newClient(values) : saveEdited(values)
     }
   }
   const form = document.querySelector('form')
@@ -74,26 +80,69 @@ newClient = (data) => {
   }
 }
 
-editClient = () => {
-  // TODO
-  // let campo = document.querySelector('#inputAlteraTarefa');
-  // let idTarefa = campo.getAttribute('data-id');
-  // let i = tarefas.findIndex((t) => t.id == idTarefa);
-  // tarefas[i].descricao = campo.value;
-  // campo.value = '';
-  // campo.removeAttribute('data-id');
-  // ativa('tela1');
-  // salvaTarefas();
-  // mostraTarefas();
+// Esta função identifica o cliente selecionado e antes de
+// redirecionar para a tela de detalhes os parametros são codificados
+// para não ficarem totalmente explicitos na url
+getClient = (id) => {
+  clients = JSON.parse(localStorage.getItem('clients'))
+
+  clientId = clients.findIndex((client) => client.id == id)
+  clientId = clients[clientId]
+
+  window.location = `/src/views/Clients/detailsClients.html?params=${ btoa( `${ JSON.stringify(clientId) }` ) }`
 }
 
-// const apagaTarefa = () => {
-//   let campo = document.querySelector('#inputAlteraTarefa');
-//   let idTarefa = campo.getAttribute('data-id');
-//   tarefas = tarefas.filter((t) => t.id != idTarefa);
-//   campo.value = '';
-//   campo.removeAttribute('data-id');
-//   ativa('tela1');
-//   salvaTarefas();
-//   mostraTarefas();
-// };
+// Esta função identifica o cliente com base nos parametros passados na url
+// descriptografa os registros e cria na os elementos na view 
+datailsClient = () => {
+  params = JSON.parse(atob(getParams))
+
+  document.getElementById('clientName').innerHTML= `${params.data.name}`
+  document.getElementById('clientPhone').innerHTML= `${params.data.phone}`
+  document.getElementById('clientAddress').innerHTML=
+    `${params.data.street}, ${params.data.number} - ${params.data.district}/${params.data.city}`
+
+  url = `/src/views/Clients/formClients.html?params=${ btoa( `${ JSON.stringify(params) }` ) }`
+
+  $('#btnRemoveClient').click((event) => { removeClient(params) })
+  $('#btnEditClient').click((event) => window.location = url )
+}
+
+// Esta função recebe os dados do cliente com base 
+// nos parametros passados na url e preenche o formulario
+editClient = () => {
+  onFormClients()
+  document.getElementById('label').innerHTML= 'Editar Cliente'
+  params = JSON.parse(atob(getParams))
+
+  document.getElementById('name').value = `${params.data.name}`
+  document.getElementById('phone').value = `${params.data.phone}`
+  document.getElementById('cep').value = `${params.data.cep}`
+  document.getElementById('street').value = `${params.data.street}`
+  document.getElementById('number').value = `${params.data.number}`
+  document.getElementById('district').value = `${params.data.district}`
+  document.getElementById('city').value = `${params.data.city}`
+}
+
+// Esta função recebe os dados atualizados e realiza o update no storage 
+saveEdited = (data) => {
+  params = JSON.parse(atob(getParams))
+  clients = JSON.parse(localStorage.getItem('clients'))
+
+  clientId = clients.findIndex((client) => client.id == params.id)
+  clients[clientId].data = data
+
+  localStorage.setItem('clients', JSON.stringify(clients))
+}
+
+removeClient = (id) => {
+  clients = JSON.parse(localStorage.getItem('clients'))
+
+  clientId = clients.findIndex((client) => client.id == id)
+  clients.splice(clientId, 1)
+
+  localStorage.setItem('clients', JSON.stringify(clients))
+
+  $("#modalSuccess").modal()
+  $('#return').click((event) => { window.history.back() })
+}

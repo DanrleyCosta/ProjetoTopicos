@@ -1,11 +1,14 @@
 const current = window.location.href
 var products = []
 
+urlParams = new URLSearchParams(window.location.search)
+getParams = urlParams.get('params')
+
 onload = () => {
   if (current.match('index')) {
     listProduct()
   } else {
-    onFormProducts()
+    !getParams ? onFormProducts() : editProduct()
   }
 }
 
@@ -22,12 +25,12 @@ listProduct = () => {
 onFormProducts = () => {
   $('#btnNewProduct').click((event) => { newProduct() })
 
-  $('#return').click((event) => { window.history.back() })
-
   $('#new').click((event) => { window.location.reload() })
 }
 
-// Função responsavel pelo registro de um novo ingrediente no localStorage
+$('#return').click((event) => { window.history.back() })
+
+// Função responsavel pelo registro de um novo producte no localStorage
 newProduct = () => {  
   function handleSubmit(event) {
     event.preventDefault()
@@ -51,6 +54,62 @@ newProduct = () => {
   form.addEventListener('submit', handleSubmit)
 }
 
+// Esta função identifica o producte selecionado e antes de
+// redirecionar para a tela de edição. Os parametros são encriptados
+// para não ficarem totalmente explicitos na url
+getProduct = (id) => {
+  products = JSON.parse(localStorage.getItem('products'))
+
+  productId = products.findIndex((product) => product.id == id)
+  productId = products[productId]
+
+  window.location = `/src/views/Products/productForm.html?params=${ btoa( `${ JSON.stringify(productId) }` ) }`
+}
+
+// Esta função recebe e descriptografa os dados do produto com base 
+// nos parametros passados na url e preenche o formulario
 editProduct = () => {
-  // TODO
+  document.getElementById('label').innerHTML= 'Editar Produto'
+  params = JSON.parse(atob(getParams))
+
+  document.getElementById('btnNewProduct').setAttribute('onClick', 'saveEdited()')
+  document.getElementById('btnNewProduct').removeAttribute('id')
+
+  document.getElementById('name').value = `${params.data.name}`
+}
+
+// Essa função recupera os dados do formulario após alteração
+// e realiza o update no LocalStorage
+saveEdited = () => {
+  $("#loadingModal").modal()
+  function handleSubmit(event) {
+    event.preventDefault()
+
+    params = JSON.parse(atob(getParams))
+    products = JSON.parse(localStorage.getItem('products'))
+
+    forms = new FormData(event.target)
+    data = Object.fromEntries(forms.entries())
+
+    productId = products.findIndex((product) => product.id == params.id)
+    products[productId].data = data
+  
+    localStorage.setItem('products', JSON.stringify(products))
+  }
+  const form = document.querySelector('form')
+  form.addEventListener('submit', handleSubmit)
+}
+
+// Essa função identifica pelo id qual a posição do item no vetor
+// remove o item e atualiza o vetor no LocalStorage
+removeProduct = (id) => {
+  products = JSON.parse(localStorage.getItem('products'))
+
+  productId = products.findIndex((product) => product.id == id)
+  products.splice(productId, 1)
+
+  localStorage.setItem('products', JSON.stringify(products))
+
+  $("#modalSuccess").modal()
+  $('#return').click((event) => { window.location.reload() })
 }

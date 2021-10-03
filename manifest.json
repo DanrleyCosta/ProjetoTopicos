@@ -5,7 +5,7 @@
   "lang": "pt-BR",
   "icons": [
   {
-    "src": "/src/assets/image/icons/android-icon-48x48.png",
+    "src": "/src/assets/image/icons/android-icon-48-48.png",
     "sizes": "48x48",
     "type": "image/png"
   },
@@ -38,6 +38,6 @@
   "dir": "ltr",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#3E4EB8",
+  "background_color": "#FFDCDA",
   "theme_color": "#2F3BA2"
 }
