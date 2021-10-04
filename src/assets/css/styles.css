@@ -2811,15 +2811,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-light {
-  color: #fff;
-  background-color: #adb5bd;
+  color: #adb5bd;
+  /* background-color: #adb5bd; */
   border-color: #adb5bd;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .btn-light:hover {
-  color: #fff;
-  background-color: #98a2ac;
+  color: #adb5bd;
+  /* background-color: #98a2ac; */
   border-color: #919ca6;
 }
 
@@ -2830,16 +2830,16 @@ fieldset:disabled a.btn {
 
 .btn-light.disabled,
 .btn-light:disabled {
-  color: #fff;
-  background-color: #adb5bd;
+  color: #adb5bd;
+  /* background-color: #adb5bd; */
   border-color: #adb5bd;
 }
 
 .btn-light:not(:disabled):not(.disabled):active,
 .btn-light:not(:disabled):not(.disabled).active,
 .show>.btn-light.dropdown-toggle {
-  color: #fff;
-  background-color: #919ca6;
+  color: #adb5bd;
+  /* background-color: #919ca6; */
   border-color: #8a95a1;
 }
 
@@ -7565,6 +7565,7 @@ button.bg-darker:focus {
 }
 
 .rounded-fixed {
+  z-index: 1000;
   position: fixed !important;
   bottom: 5rem !important;
   right: 0.5rem !important;

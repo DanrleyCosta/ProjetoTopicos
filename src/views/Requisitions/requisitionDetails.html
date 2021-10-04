@@ -71,27 +71,58 @@
     <div class="card-body">
       <div class="mt-4">
         <h6 class="d-block font-weight-bold mb-2">Cliente:</h6>
-        <p>Anakin Skywalker</p>
-        <p>(31) 9 9999-9999</p>
-        <p>Rua Joaquim Fernandes Campos, 145 - Savassi/BH</p>
+        <p id="clientName"></p>
+        <p id="clientPhone"></p>
+        <p id="clientAddress"></p>
       </div>
       <div class="mt-4">
         <h6 class="d-block font-weight-bold mb-2">Produto(s):</h6>
-        <p>Bolo nega Maluca</p>
+        <p id="products"></p>
       </div>
       <div class="mt-4 mb-5">
         <h6 class="d-block font-weight-bold mb-2">Data de Entrega:</h6>
-        <p>10/10/2021 às 10 horas</p>
+        <p id="delivery"></p>
       </div>
       <div class="d-flex justify-content-center mt-5 mb-3">
-        <button type="submit" class="btn btn-danger">Cancelar</button>
+        <button id="btnEditRequisition" type="submit" class="btn btn-info">Editar</button>
+        <button id="btnChecked" type="submit" class="btn btn-success">
+          <i class="material-icons nav__icon">alarm_on</i>
+        </button>
+        <button id="btnRemoveRequisition" type="submit" class="btn btn-danger">Cancelar</button>
       </div>
     </div>
   </div>
   <div class="pb-5 mb-2"></div>
   <!-- Fim Form Novo Pedido -->
 
-  <script src="../../assets/js/app.js"></script>
+  <div class="modal fade" id="modalSuccess" tabindex="-1" role="dialog" aria-labelledby="modal-default" style="display: none;" aria-modal="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="d-flex justify-content-center">
+            <div class="mt-5">
+              <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_pwppxjbo.json"
+                style="width: 225px; height: 225px;"
+                background="rgba(255, 255, 255, 0)"
+                speed="1"
+                autoplay
+              />
+            </div>
+          </div>
+          <div class="mt-5">
+            <h4 class="text-center text-success font-weight-bold">Registro removido com sucesso!</h4>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button id="return" type="button" class="btn btn-success" data-dismiss="modal">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/libs/jquery.min.js"></script>
+  <script src="../../assets/js/libs/bootstrap.min.js"></script>
+  <script src="../../assets/js/requisition.js"></script>
 </body>
 
 </html>

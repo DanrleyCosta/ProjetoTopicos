@@ -23,6 +23,7 @@
 
   <!--  Importação das Fontes & Estilos -->
   <link href="../../assets/css/styles.css" rel="stylesheet" />
+  <link href="../../assets/js/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />  
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -68,7 +69,7 @@
           <small class="font-weight-bold">Voltar</small>
         </h6>
       </a>
-      <h4 class="text-center font-weight-bold text-secondary">
+      <h4 id="label" class="text-center font-weight-bold text-secondary">
         Novo Pedido
       </h4>
     </div>
@@ -80,43 +81,33 @@
     <div class="card-body">
       <form>
         <small class="d-block font-weight-bold mb-2">Cliente:</small>
-        <div class="form-group">
-          <select id="clientList" name="client" class="form-control" id="selectClient">
-            <option selected>Selecione um cliente</option>
-          </select>
-        </div>
+
+        <span id="client"></span>
+
+        <select id="clientList" name="client" class="form-control">
+          <option selected>Selecione um cliente</option>
+        </select>
+        <input type="text" name="clientId" id="clientId" class="invisible">
         
-        <small class="d-block font-weight-bold mb-2">Produto:</small>
-        <div class="row">
-          <select id="productList" name="product" class="form-control col-9 ml-3">
-            <option selected>Selecione</option>
-          </select>
-          <div class="d-flex justify-content-end col-2 mt-2 mb-3">
-            <button class="btn btn-sm btn-icon-only">
-              <i class="material-icons nav__icon text-danger">delete</i>
-            </button>
-          </div>
-        </div>
-        <div class="d-flex justify-content-end mt-2 mb-3">
-          <button class="btn btn-success btn-icon-only">
-            <i class="material-icons nav__icon"><h4 class="text-white">add</h4></i>
-          </button>
-        </div>
+        <small class="d-block font-weight-bold mb-2 mt-2">Produto:</small>
+        <select required id="productList" class="form-control" multiple data-live-search="true"></select>
+        <input type="text" name="products" id="products" class="invisible">
 
         <small class="d-block mb-2">Data de Entrega:</small>
-        <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="material-icons nav__icon">date_range</i></span>
-            </div>
-            <input id="delivery" name="delivery" class="form-control datepicker form-control"
-              type="text" placeholder="Selecione a data de entrega" readonly="readonly">
-          </div>
-        </div>
+        <input
+          required
+          id="delivery"
+          name="delivery"
+          class="flatpickr datetimepicker form-control flatpickr-input active"
+          type="text"
+          placeholder="DD-MM-YYYY HH:MM"
+          readonly="readonly"
+        >
+        <input type="text" name="client" id="clientName" class="invisible">
 
         <div class="d-flex justify-content-center mt-5 mb-3">
           <a href="../../../index.html" class="btn btn-danger">Cancelar</a>
-          <button type="submit" class="btn btn-success">Concluir</button>
+          <button id="btnNewRequisition" type="submit" class="btn btn-success">Concluir</button>
         </div>
       </form>
     </div>
@@ -150,8 +141,12 @@
   </div>
 
   <script src="../../assets/js/libs/jquery.min.js"></script>
+  <script src="../../assets/js/libs/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/bootstrap-select/js/bootstrap-select.js"></script>
+  <script src="../../assets/js/bootstrap-select/js/i18n/defaults-pt_BR.js"></script>
+  <script src="../../assets/js/libs/datetimepicker.js"></script>
+  <script src="../../assets/js/l10n/pt-br.js"></script>
   <script src="../../assets/js/requisition.js"></script>
-  <script src="../../assets/js/libs/bootstrap.min.js"></script>
 </body>
 
 </html>

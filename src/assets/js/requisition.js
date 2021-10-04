@@ -6,21 +6,45 @@ getParams = urlParams.get('params')
 
 onload = () => {
   if (current.match('index')) {
-    listRequisition()
+    listRequisitionOpen()
   } else if (current.match('Requisitions/requisitionCompleted.html')) {
-
-  }else {
+    listRequisitionChecked()
+  } else if (current.match('Requisitions/requisitionForm.html')) {
     !getParams ? onFormRequisitions() : editRequisition()
+
+    $('#productList').selectpicker()
+  
+    // DateTimePicker
+    flatpickr('.datetimepicker', {
+      enableTime: true,
+      minDate: "today",
+      dateFormat: "d-m-Y H:i",
+      language: 'pt-br',
+    });
+  } else {
+    !getParams ? onFormRequisitions() : detailsRequisition()
   }
 }
 
-listRequisition = () => {
+listRequisitionOpen = () => {
   requisitions = JSON.parse(localStorage.getItem('requisitions'))
 
   document.getElementById('clientList')
 
   if (requisitions != null) {
-    writeCardsRequisition(requisitions)
+    writeCardsRequisitionOpen(requisitions)
+  } else {
+    document.getElementById('notRequisitions').classList.remove('hidden')
+  }
+}
+
+listRequisitionChecked = () => {
+  requisitions = JSON.parse(localStorage.getItem('requisitions'))
+
+  document.getElementById('clientList')
+
+  if (requisitions != null) {
+    writeCardsRequisitionChecked(requisitions)
   } else {
     document.getElementById('notRequisitions').classList.remove('hidden')
   }
@@ -34,14 +58,24 @@ onFormRequisitions = () => {
   $('#new').click((event) => { window.location.reload() })
 
   fillSelect()
+
+  document.getElementById('clientName').remove()
 }
 
 $('#return').click((event) => {
-  getParams ? window.history.back() : window.location = '/index.html'
+  !getParams ? window.history.back() : window.location = '/index.html'
 })
 
-// Função responsavel pelo registro de um novo requisitione no localStorage
+// Função responsavel pelo registro de um novo requisitio no localStorage
 newRequisition = () => {  
+  products = document.getElementsByClassName("filter-option-inner-inner")[0]
+  products = products.innerText
+  document.getElementById('products').value = `${products}`
+
+  select = document.getElementById('clientList');
+  clientId = select.options[select.selectedIndex].getAttribute('id');
+  document.getElementById('clientId').value = `${clientId}`
+
   function handleSubmit(event) {
     event.preventDefault()
 
@@ -52,10 +86,10 @@ newRequisition = () => {
     requisitions = JSON.parse(localStorage.getItem('requisitions'))
 
     if (requisitions == null) {
-      requisitions = [{ id, data }]
+      requisitions = [{ id, data, status: 'open' }]
       localStorage.setItem('requisitions', JSON.stringify(requisitions))
     } else {
-      requisitions.push({ id, data })
+      requisitions.push({ id, data, status: 'open' })
       localStorage.setItem('requisitions', JSON.stringify(requisitions))
     }    
     $("#loadingModal").modal()
@@ -71,7 +105,7 @@ fillSelect = () => {
 
   if (clients != null) {
     clients.forEach(client => {
-      option = `<option>${client.data.name}</option>`
+      option = `<option id="${client.id}">${client.data.name}</option>`
       
       ele = document.createElement('option')
       ele.innerHTML = option
@@ -94,13 +128,37 @@ fillSelect = () => {
 // Esta função identifica o pedido selecionado e antes de
 // redirecionar para a tela de edição. Os parametros são encriptados
 // para não ficarem totalmente explicitos na url
-getRequisiton = (id) => {
+getRequisition = (id) => {
   requisitions = JSON.parse(localStorage.getItem('requisitions'))
 
   requisitionId = requisitions.findIndex((requisition) => requisition.id == id)
   requisitionId = requisitions[requisitionId]
 
-  window.location = `/src/views/requisitions/requisitionsForm.html?params=${ btoa( `${ JSON.stringify(requisitionId) }` ) }`
+  window.location = `/src/views/Requisitions/requisitionDetails.html?params=${ btoa( `${ JSON.stringify(requisitionId) }` ) }`
+}
+
+// Esta função identifica o pedido com base nos parametros passados na url
+// descriptografa os registros e cria na os elementos na view 
+detailsRequisition = () => {
+  params = JSON.parse(atob(getParams))
+  clients = JSON.parse(localStorage.getItem('clients'))
+
+  clientId = clients.findIndex((client) => client.id == params.data.clientId)
+  clientId = clients[clientId]
+
+  document.getElementById('clientName').innerHTML= `${params.data.client}`
+  document.getElementById('clientPhone').innerHTML= `${clientId.data.phone}`
+  document.getElementById('clientAddress').innerHTML=
+    `${clientId.data.street}, ${clientId.data.number} - ${clientId.data.district}/${clientId.data.city}`
+
+  document.getElementById('products').innerHTML= `${params.data.products}`
+  document.getElementById('delivery').innerHTML= `${params.data.delivery}`
+
+  url = `/src/views/Requisitions/requisitionForm.html?params=${ btoa( `${ JSON.stringify(params) }` ) }`
+
+  $('#btnRemoveRequisition').click((event) => { removeRequisition(params) })
+  $('#btnEditRequisition').click((event) => window.location = url )
+  $('#btnChecked').click((event) => { setChecked(params) })
 }
 
 // Esta função recebe e descriptografa os dados do pedido com base 
@@ -108,13 +166,52 @@ getRequisiton = (id) => {
 editRequisition = () => {
   document.getElementById('label').innerHTML= 'Editar Pedido'
   params = JSON.parse(atob(getParams))
+  fillSelect()
 
   document.getElementById('btnNewRequisition').setAttribute('onClick', 'saveEdited()')
   document.getElementById('btnNewRequisition').removeAttribute('id')
+  
+  document.getElementById('clientList').remove()
+  document.getElementById('clientId').value = `${params.data.clientId}`
+  document.getElementById('clientName').value = `${params.data.client}`
+  document.getElementById('client').innerHTML = `${params.data.client}`
 
-  document.getElementById('client').value = `${params.data.client}`
-  document.getElementById('product').value = `${params.data.product}`
+  document.getElementById('productList').value = `${params.data.products}`
   document.getElementById('delivery').value = `${params.data.delivery}`
+}
+
+saveEdited = () => {
+  $("#loadingModal").modal()
+
+  products = document.getElementsByClassName("filter-option-inner-inner")[0]
+  products = products.innerText
+  document.getElementById('products').value = `${products}`
+
+  function handleSubmit(event) {
+    event.preventDefault()
+
+    params = JSON.parse(atob(getParams))
+    requisitions = JSON.parse(localStorage.getItem('requisitions'))
+
+    forms = new FormData(event.target)
+    data = Object.fromEntries(forms.entries())
+
+    requisitionId = requisitions.findIndex((requisition) => requisition.id == params.id)
+    
+    id = data.id
+    data = {
+      client: data.client,
+      clientId: data.clientId,
+      delivery: data.delivery,
+      products: data.products
+    }
+  
+    requisitions[requisitionId] = {id, data, status: 'open'}
+
+    localStorage.setItem('requisitions', JSON.stringify(requisitions))
+  }
+  const form = document.querySelector('form')
+  form.addEventListener('submit', handleSubmit)
 }
 
 // Essa função identifica pelo id qual a posição do item no vetor
@@ -128,5 +225,23 @@ removeRequisition = (id) => {
   localStorage.setItem('requisitions', JSON.stringify(requisitions))
 
   $("#modalSuccess").modal()
-  $('#return').click((event) => { window.location.reload() })
+  $('#return').click((event) => { window.location = '/index.html' })
+}
+
+// Essa função seta o status do pedido para concluido
+setChecked = (params) => {
+  requisitions = JSON.parse(localStorage.getItem('requisitions'))
+  requisitionId = requisitions.findIndex((requisition) => requisition.id == params.id)
+
+  id = params.id
+
+  data = {
+    client: params.data.client,
+    clientId: params.data.clientId,
+    delivery: params.data.delivery,
+    products: params.data.products
+  }
+
+  requisitions[requisitionId] = {id, data, status: 'checked'}
+  localStorage.setItem('requisitions', JSON.stringify(requisitions))
 }
