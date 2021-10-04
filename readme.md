@@ -44,7 +44,7 @@ Caso o usuário clique em ***"Fechados"*** irá visualizar seus pedidos concluí
 
 Nesta tela o usuário poderá selecionar um cliente, quantos produtos estiverem disponíveis e a Data/Hora de entrega para o pedido.
 
-## GIF
+<img alt="pedidos-completos" src=".github/pedidos.gif" height="500">
 
 ### Detalhes de Pedido
 
@@ -68,6 +68,9 @@ Como nas outras telas de listagem, caso não existam registros será apresentado
 
 <img alt="produtos-mercadoria" src=".github/produtos-mercadoria.png" height="500">
 
+<img alt="produtos-mercadoria" src=".github/mercadoria.gif" height="500">
+
+
 Nessa tela será possível ***adicionar***, ***remover*** e ***editar*** os registros.
 
 Clicando no botão de ***adição*** o usuario irá preencher o nome do produto e quantos ingredientes são necessarios para criação do item (como uma receita).
@@ -81,6 +84,7 @@ Clicando na ***lixeira*** o usuario removerá o registro.
 Como nas outras telas de listagem, caso não existam registros será apresentado um gif e texto explicativo.
 
 <img alt="produtos-ingredientes" src=".github/produtos-ingredientes.png" height="500">
+<img alt="produtos-ingrediente" src=".github/ingrediente.gif" height="500">
 
 Nessa tela será possível ***adicionar***, ***remover*** e ***editar*** os registros.
 
@@ -95,6 +99,7 @@ Clicando na ***lixeira*** o usuario removerá o registro.
 Como nas outras telas de listagem, caso não existam registros será apresentado um gif e texto explicativo.
 
 <img alt="clientes" src=".github/client.png" height="500">
+<img alt="clientes" src=".github/cliente.gif" height="500">
 
 Nessa tela ao clicar no botão de adição o usuario será levado ao formulario de cadastro.
 
