@@ -42,11 +42,7 @@ Caso o usuário clique em ***"Fechados"*** Irá visualizar seus pedidos concluí
  
 Nesta tela o usuário poderá selecionar um cliente, quantos produtos estiverem disponíveis e a Data/Hora de entrega para o pedido.
  
-<<<<<<< HEAD
 <img alt="pedidos-completos" src=".github/pedidos.gif" height="500">
-=======
-![pedido](https://user-images.githubusercontent.com/75547196/135935963-2d5829f0-1f5a-4f98-8c18-8c8fa0be792c.gif)
->>>>>>> 39a2682af9c8e5ff420b073c30ac2bc8925c32b7
  
 ### Detalhes de Pedido
  
@@ -139,7 +135,7 @@ Nesta aplicação, os dados do usuário são armazenados por meio do LocalStorag
  
 Com todos estes passos concluídos é possível gerar um pedido vinculando o cliente e os produtos criados.
  
-Durante a navegação das páginas os dados do usuário são passados como parâmetro através da url. Como uma forma de segurança os dados estão sendo inscritos para que não fiquem totalmente explícitos na url.
+Durante a navegação das páginas os dados do usuário são passados como parâmetro através da url. Como uma forma de segurança os dados estão sendo encriptados para que não fiquem totalmente explícitos na url.
  
 ## 3. Checklist de implementação
  
