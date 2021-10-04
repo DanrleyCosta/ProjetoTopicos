@@ -30,15 +30,6 @@
 </head>
 
 <body>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('../../assets/js/sw.js')
-      .then(function() {
-        console.log('Service Worker Registrado');
-      });
-    }
-  </script>
-
   <!-- Barra de Navegação -->
   <nav class="nav">
     <a href="./requisitionForm.html" class="nav__link nav__link--active">
@@ -134,7 +125,6 @@
         </div>
         <div class="modal-footer">
           <button id="return" type="button" class="btn btn-info" data-dismiss="modal">Ver Pedidos</button>
-          <button id="new" type="button" class="btn btn-success ml-auto" data-dismiss="modal">Novo Pedido</button>
         </div>
       </div>
     </div>

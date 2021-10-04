@@ -142,7 +142,7 @@ writeCardsRequisitionOpen = (requisitions) => {
             </div>
             <div class="col-9">
               <blockquote class="blockquote mb-0">
-                <h5 class="font-weight-bold text-justify">${requisition.data.client}</h5>
+                <h5 class="font-weight-bold">${requisition.data.client}</h5>
                 <p class="font-weight-bold text-justify text-muted">${requisition.data.delivery} horas</p>
                 <footer class="text-secondary d-flex justify-content-end">
                   <button
@@ -183,7 +183,7 @@ writeCardsRequisitionChecked = (requisitions) => {
             </div>
             <div class="col-9">
               <blockquote class="blockquote mb-0">
-                <h5 class="font-weight-bold text-justify">${requisition.data.client}</h5>
+                <h5 class="font-weight-bold">${requisition.data.client}</h5>
                 <p class="font-weight-bold text-justify text-muted">${requisition.data.delivery} horas</p>
                 <footer class="text-secondary d-flex justify-content-end">
                   <button

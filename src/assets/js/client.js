@@ -17,7 +17,7 @@ onload = () => {
 listClient = () => {
   clients = JSON.parse(localStorage.getItem('clients'))
 
-  if (clients != null) {
+  if (clients != null && clients.length != 0) {
     writeCardsClient(clients)
   } else {
     document.getElementById('notClients').classList.remove('hidden')

@@ -15,7 +15,7 @@ onload = () => {
 listProduct = () => {
   products = JSON.parse(localStorage.getItem('products'))
 
-  if (products != null) {
+  if (products != null && products.length != 0) {
     writeCardsProduct(products)
   } else {
     document.getElementById('notProducts').classList.remove('hidden')

@@ -15,7 +15,7 @@ onload = () => {
 listIngredient = () => {
   ingredients = JSON.parse(localStorage.getItem('ingredients'))
 
-  if (ingredients != null) {
+  if (ingredients != null && ingredients.length != 0) {
     writeCardsIngredient(ingredients)
   } else {
     document.getElementById('notIngredients').classList.remove('hidden')

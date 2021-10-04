@@ -22,34 +22,37 @@ onload = () => {
       language: 'pt-br',
     });
   } else {
-    !getParams ? onFormRequisitions() : detailsRequisition()
+    detailsRequisition()
   }
 }
 
+// Carrega a lista de pedidos em aberto
 listRequisitionOpen = () => {
   requisitions = JSON.parse(localStorage.getItem('requisitions'))
 
   document.getElementById('clientList')
 
-  if (requisitions != null) {
+  if (requisitions != null && requisitions.length != 0) {
     writeCardsRequisitionOpen(requisitions)
   } else {
     document.getElementById('notRequisitions').classList.remove('hidden')
   }
 }
 
+// Carrega a lista de pedidos concluidos
 listRequisitionChecked = () => {
   requisitions = JSON.parse(localStorage.getItem('requisitions'))
 
   document.getElementById('clientList')
 
-  if (requisitions != null) {
+  if (requisitions != null && requisitions.length != 0) {
     writeCardsRequisitionChecked(requisitions)
   } else {
     document.getElementById('notRequisitions').classList.remove('hidden')
   }
 }
 
+// Identifica o que esta dentro do formulario 
 onFormRequisitions = () => {
   $('#btnNewRequisition').click((event) => {
     !getParams ? newRequisition() : saveEdited()
@@ -232,16 +235,21 @@ removeRequisition = (id) => {
 setChecked = (params) => {
   requisitions = JSON.parse(localStorage.getItem('requisitions'))
   requisitionId = requisitions.findIndex((requisition) => requisition.id == params.id)
-
+  
   id = params.id
-
+  
   data = {
     client: params.data.client,
     clientId: params.data.clientId,
     delivery: params.data.delivery,
     products: params.data.products
   }
-
+  
   requisitions[requisitionId] = {id, data, status: 'checked'}
   localStorage.setItem('requisitions', JSON.stringify(requisitions))
+
+  $("#modalChecked").modal()
+  $('#return').click((event) => { window.location = '/index.html' })
 }
+
+navigator.serviceWorker.register('/sw.js');
