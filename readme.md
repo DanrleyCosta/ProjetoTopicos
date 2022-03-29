@@ -1,5 +1,5 @@
 <h1 align="center">
- <img alt="GG" height="80" title="Plant Manager" src=".github/logo4848.png" style="border-radius: 20px" />
+ <img alt="CA" height="80" title="Plant Manager" src=".github/logo4848.png" style="border-radius: 20px" />
 </h1>
  
 <p align="center">
@@ -24,24 +24,22 @@ que o usuário consiga se planejar antes de ir para o local.
  
 ### Tela principal - Estabelecimentos
  
-Nesta tela, por padrão o usuário poderá visualizar seus Estabelecimentos ***"Em Andamento"***. Se não existirem registros será apresentado um gif e um texto identificando que não existem registros.
-Como apresentado abaixo:
+Nesta tela, por padrão o usuário poderá visualizar seus Estabelecimentos ***"Proximos"***. Se não existirem registros de estabelecimento na localidade será apresentado um gif e um texto identificando que não existem registros.
+
  
+Clicando no botão com o símbolo '+' é possível realizar a inserção de uma nova bandeiras que será mostrado mais adiante.
  
-Clicando no botão com o símbolo '+' é possível realizar a inserção de um novo bandeiras que será mostrado mais adiante.
- 
-Caso o usuário clique em ***"Fechados"*** Irá visualizar seus Estabelecimentos concluídos se existirem. Conforme apresentado abaixo:
- 
+Caso o usuário clique em ***"Fechados"*** Irá visualizar seus Estabelecimentos visitados se existirem.  
  
 ### Cadastro das bandeiras
  
-Nesta tela o usuário poderá selecionar um Loja, quantos Aceitos estiverem disponíveis e a Data/Hora de entrega para o bandeiras.
+Nesta tela o usuário poderá selecionar uma bandeira, quantos Aceitos estiverem disponíveis.
  
  
 ### Detalhes das bandeiras
  
 Ao clicar no ícone de interrogação na tela de Estabelecimentos *"Em Aberto"* ou *"Concluídos"* o usuário será levado a tela onde serão apresentados os detalhes das bandeiras.
-Informações sobre o Loja, Aceitos relacionados e a data de entrega.
+Informações sobre o Loja, Aceitos relacionados.
  
 Essa tela também apresenta ao usuário as opções de:
  
@@ -50,15 +48,12 @@ Essa tela também apresenta ao usuário as opções de:
 - Excluir o bandeiras.
  
  
- 
-Com a opção de edição o usuário será enviado para o formulário podendo atualizar os Aceitos selecionados e a data de entrega.
+Com a opção de edição o usuário será enviado para o formulário podendo atualizar os Aceitos selecionados.
  
 ### Tela de Aceitos
  
 Como nas outras telas de listagem, caso não existam registros será apresentado um gif e texto explicativo.
- 
 
- 
  
 Nessa tela será possível ***adicionar***, ***remover*** e ***editar*** os registros.
  
@@ -76,9 +71,9 @@ Como nas outras telas de listagem, caso não existam registros será apresentado
  
 Nessa tela será possível ***adicionar***, ***remover*** e ***editar*** os registros.
  
-Clicando no botão de ***adição*** o usuário irá preencher o nome do ingrediente.
+Clicando no botão de ***adição*** o usuário irá preencher o nome da localidade.
  
-Clicando no ***lapis*** O usuário será levado para a tela de edição, onde poderá alterar o nome do ingrediente.
+Clicando no ***lapis*** O usuário será levado para a tela de edição, onde poderá alterar o nome do localidade.
  
 Clicando na ***lixeira*** o usuário removerá o registro.
  

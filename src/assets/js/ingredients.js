@@ -34,7 +34,7 @@ $('#return').click((event) => {
   getParams ? window.history.back() : window.location = '/src/views/Ingredients/index.html'
 })
 
-// Função responsavel pelo registro de um novo ingrediente no localStorage
+// Função responsavel pelo registro de um novo localidade no localStorage
 newIngredient = () => {  
   function handleSubmit(event) {
     event.preventDefault()
@@ -58,7 +58,7 @@ newIngredient = () => {
   form.addEventListener('submit', handleSubmit)
 }
 
-// Esta função identifica o ingrediente selecionado e antes de
+// Esta função identifica o localidade selecionado e antes de
 // redirecionar para a tela de edição. Os parametros são encriptados
 // para não ficarem totalmente explicitos na url
 getIngredient = (id) => {
@@ -70,10 +70,10 @@ getIngredient = (id) => {
   window.location = `/src/views/Ingredients/ingredientsForm.html?params=${ btoa( `${ JSON.stringify(ingredientId) }` ) }`
 }
 
-// Esta função recebe e descriptografa os dados do ingrediente com base 
+// Esta função recebe e descriptografa os dados do localidade com base 
 // nos parametros passados na url e preenche o formulario
 editIngredient = () => {
-  document.getElementById('label').innerHTML= 'Editar Ingrediente'
+  document.getElementById('label').innerHTML= 'Editar localidade'
   params = JSON.parse(atob(getParams))
 
   document.getElementById('btnNewIngredient').setAttribute('onClick', 'saveEdited()')
