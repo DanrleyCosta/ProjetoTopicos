@@ -1,5 +1,5 @@
 <h1 align="center">
- <img alt="GG" height="80" title="Plant Manager" src=".github/logo.png" style="border-radius: 20px" />
+ <img alt="GG" height="80" title="Plant Manager" src=".github/logo4848.png" style="border-radius: 20px" />
 </h1>
  
 <p align="center">
@@ -27,19 +27,16 @@ que o usuário consiga se planejar antes de ir para o local.
 Nesta tela, por padrão o usuário poderá visualizar seus Estabelecimentos ***"Em Andamento"***. Se não existirem registros será apresentado um gif e um texto identificando que não existem registros.
 Como apresentado abaixo:
  
-<img alt="bandeiras-aberto" src=".github/Estabelecimentos-aberto.png" height="500">
  
 Clicando no botão com o símbolo '+' é possível realizar a inserção de um novo bandeiras que será mostrado mais adiante.
  
 Caso o usuário clique em ***"Fechados"*** Irá visualizar seus Estabelecimentos concluídos se existirem. Conforme apresentado abaixo:
  
-<img alt="Estabelecimentos-completos" src=".github/Estabelecimentos-completos.png" height="500">
  
 ### Cadastro das bandeiras
  
 Nesta tela o usuário poderá selecionar um Loja, quantos Aceitos estiverem disponíveis e a Data/Hora de entrega para o bandeiras.
  
-<img alt="Estabelecimentos-completos" src=".github/Estabelecimentos.gif" height="500">
  
 ### Detalhes das bandeiras
  
@@ -52,7 +49,6 @@ Essa tela também apresenta ao usuário as opções de:
 - Editar o bandeiras;
 - Excluir o bandeiras.
  
-<img alt="detalhes-bandeiras" src=".github/detalhes-bandeiras.png" height="500">
  
  
 Com a opção de edição o usuário será enviado para o formulário podendo atualizar os Aceitos selecionados e a data de entrega.
@@ -61,9 +57,7 @@ Com a opção de edição o usuário será enviado para o formulário podendo at
  
 Como nas outras telas de listagem, caso não existam registros será apresentado um gif e texto explicativo.
  
-<img alt="Aceitos-mercadoria" src=".github/Aceitos-mercadoria.png" height="500">
- 
-<img alt="Aceitos-mercadoria" src=".github/mercadoria.gif" height="500">
+
  
  
 Nessa tela será possível ***adicionar***, ***remover*** e ***editar*** os registros.
@@ -78,8 +72,7 @@ Clicando na ***lixeira*** o usuário removerá o registro.
  
 Como nas outras telas de listagem, caso não existam registros será apresentado um gif e texto explicativo.
  
-<img alt="Aceitos-Locais" src=".github/Aceitos-Locais.png" height="500">
-<img alt="Aceitos-ingrediente" src=".github/ingrediente.gif" height="500">
+
  
 Nessa tela será possível ***adicionar***, ***remover*** e ***editar*** os registros.
  
@@ -92,9 +85,7 @@ Clicando na ***lixeira*** o usuário removerá o registro.
 ### Tela de Lojas
  
 Como nas outras telas de listagem, caso não existam registros será apresentado um gif e texto explicativo.
- 
-<img alt="Lojas" src=".github/client.png" height="500">
-<img alt="Lojas" src=".github/Loja.gif" height="500">
+
  
 Nessa tela ao clicar no botão de adição o usuário será levado ao formulário de cadastro.
  
@@ -110,7 +101,6 @@ O usuário poderá cadastrar seus Lojas com as seguinte informações:
  
 ### Detalhes do Loja
  
-<img alt="Lojas" src=".github/detalhe-Loja.png" height="500">
  
 Nesta tela serão apresentados os dados do Loja e será possível remover ou editar os registros.
  
@@ -120,7 +110,6 @@ No momento da edição todos os dados estão disponíveis para alteração.
  
 Nesta tela apenas é apresentada uma mini descrição sobre a aplicação e a referência do repositório no GitHub.
  
-<img alt="descricao" src=".github/descricao.png" height="500">
  
 ## 2. Dados do usuário
  
