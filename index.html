@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>GG - Gestão Gastrô</title>
+  <title>Cê Aceita</title>
 
   <!--  Importação do Manifesto  -->
   <link rel="manifest" href="/manifest.json">
@@ -33,15 +33,15 @@
   <nav class="nav">
     <a href="./index.html" class="nav__link nav__link--active">
       <i class="material-icons nav__icon">receipt</i>
-      <span class="nav__text font-weight-bold">Pedidos</span>
+      <span class="nav__text font-weight-bold">Estabelecimentos</span>
     </a>
     <a href="./src/views/Products/index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">local_dining</i>
-      <span class="nav__text">Produtos</span>
+      <span class="nav__text">Aceitos</span>
     </a>
     <a href="./src/views/Clients/index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">people_alt</i>
-      <span class="nav__text">Clientes</span>
+      <span class="nav__text">Lojas</span>
     </a>
     <a href="./description.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">settings_suggest</i>
@@ -50,12 +50,12 @@
   </nav>
   <!-- Fim da Barra de Navegação -->
 
-  <!-- Label Pedidos -->
+  <!-- Label Estabelecimentos -->
   <div class="card mb-3">
     <div class="card-body">
       <h4 class="text-center font-weight-bold text-secondary">
         <i class="material-icons nav__icon">receipt</i>
-        Pedidos
+        Estabelecimentos
       </h4>
       <!-- Menu de vizualização de itens em aberto e finalizados -->
       <div class="row mt-4">
@@ -79,10 +79,10 @@
           </a>
         </div>
       </div>
-      <!-- Fim menu de vizualização de pedidos em aberto e concluídos -->
+      <!-- Fim menu de vizualização de Estabelecimentos em aberto e concluídos -->
     </div>
   </div>
-  <!-- Fim Label Pedido -->
+  <!-- Fim Label bandeiras -->
 
   <!-- Animação representando que não existem dados -->
   <div id="notRequisitions" class="mt-5 opacity-5 hidden">
@@ -95,13 +95,13 @@
       autoplay
       />
     </div>
-    <h4 class="text-center font-weight-bold text-secondary">Não existem pedidos</h4>
+    <h4 class="text-center font-weight-bold text-secondary">Não existem Estabelecimentos</h4>
   </div>
   <!-- Fim animação representando que não existem dados -->
 
-  <!-- Listagem de Pedidos -->
+  <!-- Listagem de Estabelecimentos -->
   
-  <!-- Fim da Listagem de Pedidos -->
+  <!-- Fim da Listagem de Estabelecimentos -->
 
   <a href="./src/views/Requisitions/requisitionForm.html"
     class="btn btn-lg btn-info btn-icon-only rounded-circle rounded-fixed">

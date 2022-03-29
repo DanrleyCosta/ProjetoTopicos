@@ -11,78 +11,75 @@
 </p>
 &nbsp;
  
-## 💻 GG - Gestão Gastrô
+## 💻 Cê Aceita
 &nbsp;
  
-**Leonardo Gianluca Costa Raposo**
+**Danrley Costa De Souza**
  
-O objetivo desta aplicação é otimizar o processo dos micro empreendedores e produtores do ramo alimentício oferecendo:
- 
-- Controle da cartela de clientes;
-- Gestão de pedidos em andamento e concluídos;
-- Registro de produtos e receitas (ingredientes);
-- Processo de orçamentos;
+O aplicativo CêAceita é um projeto que tem como objetivo informar ao usuário se os
+comércios de determinada região aceitam determinadas formas de pagamento para
+que o usuário consiga se planejar antes de ir para o local.
  
 ## 1. Interfaces
  
-### Tela principal - Pedidos
+### Tela principal - Estabelecimentos
  
-Nesta tela, por padrão o usuário poderá visualizar seus pedidos ***"Em Andamento"***. Se não existirem registros será apresentado um gif e um texto identificando que não existem registros.
+Nesta tela, por padrão o usuário poderá visualizar seus Estabelecimentos ***"Em Andamento"***. Se não existirem registros será apresentado um gif e um texto identificando que não existem registros.
 Como apresentado abaixo:
  
-<img alt="pedido-aberto" src=".github/pedidos-aberto.png" height="500">
+<img alt="bandeiras-aberto" src=".github/Estabelecimentos-aberto.png" height="500">
  
-Clicando no botão com o símbolo '+' é possível realizar a inserção de um novo pedido que será mostrado mais adiante.
+Clicando no botão com o símbolo '+' é possível realizar a inserção de um novo bandeiras que será mostrado mais adiante.
  
-Caso o usuário clique em ***"Fechados"*** Irá visualizar seus pedidos concluídos se existirem. Conforme apresentado abaixo:
+Caso o usuário clique em ***"Fechados"*** Irá visualizar seus Estabelecimentos concluídos se existirem. Conforme apresentado abaixo:
  
-<img alt="pedidos-completos" src=".github/pedidos-completos.png" height="500">
+<img alt="Estabelecimentos-completos" src=".github/Estabelecimentos-completos.png" height="500">
  
-### Cadastro de Pedido
+### Cadastro das bandeiras
  
-Nesta tela o usuário poderá selecionar um cliente, quantos produtos estiverem disponíveis e a Data/Hora de entrega para o pedido.
+Nesta tela o usuário poderá selecionar um Loja, quantos Aceitos estiverem disponíveis e a Data/Hora de entrega para o bandeiras.
  
-<img alt="pedidos-completos" src=".github/pedidos.gif" height="500">
+<img alt="Estabelecimentos-completos" src=".github/Estabelecimentos.gif" height="500">
  
-### Detalhes de Pedido
+### Detalhes das bandeiras
  
-Ao clicar no ícone de interrogação na tela de pedidos *"Em Aberto"* ou *"Concluídos"* o usuário será levado a tela onde serão apresentados os detalhes do pedido.
-Informações sobre o cliente, produtos relacionados e a data de entrega.
+Ao clicar no ícone de interrogação na tela de Estabelecimentos *"Em Aberto"* ou *"Concluídos"* o usuário será levado a tela onde serão apresentados os detalhes das bandeiras.
+Informações sobre o Loja, Aceitos relacionados e a data de entrega.
  
 Essa tela também apresenta ao usuário as opções de:
  
-- Finalizar o pedido;
-- Editar o pedido;
-- Excluir o pedido.
+- Finalizar o bandeiras;
+- Editar o bandeiras;
+- Excluir o bandeiras.
  
-<img alt="detalhes-pedido" src=".github/detalhes-pedido.png" height="500">
+<img alt="detalhes-bandeiras" src=".github/detalhes-bandeiras.png" height="500">
  
  
-Com a opção de edição o usuário será enviado para o formulário podendo atualizar os produtos selecionados e a data de entrega.
+Com a opção de edição o usuário será enviado para o formulário podendo atualizar os Aceitos selecionados e a data de entrega.
  
-### Tela de produtos
+### Tela de Aceitos
  
 Como nas outras telas de listagem, caso não existam registros será apresentado um gif e texto explicativo.
  
-<img alt="produtos-mercadoria" src=".github/produtos-mercadoria.png" height="500">
+<img alt="Aceitos-mercadoria" src=".github/Aceitos-mercadoria.png" height="500">
  
-<img alt="produtos-mercadoria" src=".github/mercadoria.gif" height="500">
+<img alt="Aceitos-mercadoria" src=".github/mercadoria.gif" height="500">
  
  
 Nessa tela será possível ***adicionar***, ***remover*** e ***editar*** os registros.
  
-Clicando no botão de ***adição*** o usuário irá preencher o nome do produto e quantos ingredientes são necessários para criação do item (como uma receita).
- 
-Clicando no ***lapis*** O usuário será levado para a tela de edição, onde poderá alterar o nome, adicionar ou remover ingredientes.
+Clicando no botão de ***adição*** o usuário irá preencher o nome do local 
+
+Clicando no ***lapis*** O usuário será levado para a tela de edição, onde poderá alterar o nome, adicionar ou remover Locais.
  
 Clicando na ***lixeira*** o usuário removerá o registro.
  
-### Tela de Ingredientes
+### Tela de Locais
  
 Como nas outras telas de listagem, caso não existam registros será apresentado um gif e texto explicativo.
  
-<img alt="produtos-ingredientes" src=".github/produtos-ingredientes.png" height="500">
-<img alt="produtos-ingrediente" src=".github/ingrediente.gif" height="500">
+<img alt="Aceitos-Locais" src=".github/Aceitos-Locais.png" height="500">
+<img alt="Aceitos-ingrediente" src=".github/ingrediente.gif" height="500">
  
 Nessa tela será possível ***adicionar***, ***remover*** e ***editar*** os registros.
  
@@ -92,30 +89,30 @@ Clicando no ***lapis*** O usuário será levado para a tela de edição, onde po
  
 Clicando na ***lixeira*** o usuário removerá o registro.
  
-### Tela de Clientes
+### Tela de Lojas
  
 Como nas outras telas de listagem, caso não existam registros será apresentado um gif e texto explicativo.
  
-<img alt="clientes" src=".github/client.png" height="500">
-<img alt="clientes" src=".github/cliente.gif" height="500">
+<img alt="Lojas" src=".github/client.png" height="500">
+<img alt="Lojas" src=".github/Loja.gif" height="500">
  
 Nessa tela ao clicar no botão de adição o usuário será levado ao formulário de cadastro.
  
 Ao clicar na interrogação(?) o usuário será levado a tela de detalhes.
  
-### Cadastro de Cliente
+### Cadastro de Loja
  
-O usuário poderá cadastrar seus clientes com as seguinte informações:
+O usuário poderá cadastrar seus Lojas com as seguinte informações:
  
 - Nome;
 - Telefone;
-- Endereço (CEP, rua, número, bairro e cidade).
+- Endereço.
  
-### Detalhes do Cliente
+### Detalhes do Loja
  
-<img alt="clientes" src=".github/detalhe-cliente.png" height="500">
+<img alt="Lojas" src=".github/detalhe-Loja.png" height="500">
  
-Nesta tela serão apresentados os dados do cliente e será possível remover ou editar os registros.
+Nesta tela serão apresentados os dados do Loja e será possível remover ou editar os registros.
  
 No momento da edição todos os dados estão disponíveis para alteração.
  
@@ -129,25 +126,25 @@ Nesta tela apenas é apresentada uma mini descrição sobre a aplicação e a re
  
 Nesta aplicação, os dados do usuário são armazenados por meio do LocalStorage e vinculados em outras telas, mantendo o seguinte fluxo.
  
-- Cadastro e Edição de Ingredientes;
-- Cadastro de Produtos que utilizam as informações do ingredientes;
-- Cadastro, Visualização e Edição de Clientes;
+- Cadastro e Edição de Locais;
+- Cadastro de Aceitos que utilizam as informações do Locais;
+- Cadastro, Visualização e Edição de Lojas;
  
-Com todos estes passos concluídos é possível gerar um pedido vinculando o cliente e os produtos criados.
+Com todos estes passos concluídos é possível gerar um bandeiras vinculando o Loja e os Aceitos criados.
  
 Durante a navegação das páginas os dados do usuário são passados como parâmetro através da url. Como uma forma de segurança os dados estão sendo encriptados para que não fiquem totalmente explícitos na url.
  
 ## 3. Checklist de implementação
  
-- A aplicação é original e não uma cópia da aplicação de um colega ou de uma aplicação já existente? **Sim**
-- A aplicação tem pelo menos duas interfaces (telas ou páginas) independentes? **Sim**
+- A aplicação é original? **Sim**
+- A aplicação tem pelo menos duas interfaces? **Sim**
 - A aplicação armazena e usa de forma relevante dados complexos do usuário? **Sim**
 - A aplicação possui um manifesto para instalação no dispositivo do usuário? **Sim**
 - A aplicação possui um _service worker_ que permite o funcionamento off-line? **Sim**
 - O código da minha aplicação possui comentários explicando cada operação? **Sim**
-- A aplicação está funcionando corretamente?
- 
- **Não**. Existem falhas quanto a edição de **Produtos** e **Pedidos**, pois os dados não estão sendo retornados da forma que deveriam no componente de seleção. Impossibilitando o usuário de alterar os itens de produto e pedido.
+- A aplicação está funcionando corretamente? **Não**. 
+
+Esta com problemas na adição de **Aceitos** e **Estabelecimentos**, pois os dados não estão sendo retornados da forma que deveriam no componente de seleção. Impossibilitando o usuário de alterar os itens de produto e bandeiras.
  
 - A aplicação está completa?
  **Sim**

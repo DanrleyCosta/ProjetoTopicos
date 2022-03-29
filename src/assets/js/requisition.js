@@ -26,7 +26,7 @@ onload = () => {
   }
 }
 
-// Carrega a lista de pedidos em aberto
+// Carrega a lista de Estabelecimentos em aberto
 listRequisitionOpen = () => {
   requisitions = JSON.parse(localStorage.getItem('requisitions'))
 
@@ -39,7 +39,7 @@ listRequisitionOpen = () => {
   }
 }
 
-// Carrega a lista de pedidos concluidos
+// Carrega a lista de Estabelecimentos concluidos
 listRequisitionChecked = () => {
   requisitions = JSON.parse(localStorage.getItem('requisitions'))
 
@@ -101,8 +101,8 @@ newRequisition = () => {
   form.addEventListener('submit', handleSubmit)
 }
 
-// Essa função tem como objetivo filtrar Clientes e Produtos
-// e adicionar os itens ao select para criação de um Pedido
+// Essa função tem como objetivo filtrar Lojas e Aceitos
+// e adicionar os itens ao select para criação de um bandeiras
 fillSelect = () => {
   clients = JSON.parse(localStorage.getItem('clients'))
 
@@ -128,7 +128,7 @@ fillSelect = () => {
   }
 }
 
-// Esta função identifica o pedido selecionado e antes de
+// Esta função identifica o bandeiras selecionado e antes de
 // redirecionar para a tela de edição. Os parametros são encriptados
 // para não ficarem totalmente explicitos na url
 getRequisition = (id) => {
@@ -140,7 +140,7 @@ getRequisition = (id) => {
   window.location = `/src/views/Requisitions/requisitionDetails.html?params=${ btoa( `${ JSON.stringify(requisitionId) }` ) }`
 }
 
-// Esta função identifica o pedido com base nos parametros passados na url
+// Esta função identifica o bandeiras com base nos parametros passados na url
 // descriptografa os registros e cria na os elementos na view 
 detailsRequisition = () => {
   params = JSON.parse(atob(getParams))
@@ -164,10 +164,10 @@ detailsRequisition = () => {
   $('#btnChecked').click((event) => { setChecked(params) })
 }
 
-// Esta função recebe e descriptografa os dados do pedido com base 
+// Esta função recebe e descriptografa os dados das bandeiras com base 
 // nos parametros passados na url e preenche o formulario
 editRequisition = () => {
-  document.getElementById('label').innerHTML= 'Editar Pedido'
+  document.getElementById('label').innerHTML= 'Editar bandeiras'
   params = JSON.parse(atob(getParams))
   fillSelect()
 
@@ -231,7 +231,7 @@ removeRequisition = (id) => {
   $('#return').click((event) => { window.location = '/index.html' })
 }
 
-// Essa função seta o status do pedido para concluido
+// Essa função seta o status das bandeiras para concluido
 setChecked = (params) => {
   requisitions = JSON.parse(localStorage.getItem('requisitions'))
   requisitionId = requisitions.findIndex((requisition) => requisition.id == params.id)

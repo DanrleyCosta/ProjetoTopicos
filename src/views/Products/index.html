@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>GG - Gestão Gastrô</title>
+  <title>Cê Aceita</title>
 
   <!--  Importação do Manifesto  -->
   <link rel="manifest" href="../../../manifest.json">
@@ -33,15 +33,15 @@
   <nav class="nav">
     <a href="../../../index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">receipt</i>
-      <span class="nav__text">Pedidos</span>
+      <span class="nav__text">Estabelecimentos</span>
     </a>
     <a href="./index.html" class="nav__link nav__link--active">
       <i class="material-icons nav__icon">local_dining</i>
-      <span class="nav__text font-weight-bold">Produtos</span>
+      <span class="nav__text font-weight-bold">Aceitos</span>
     </a>
     <a href="../Clients/index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">people_alt</i>
-      <span class="nav__text">Clientes</span>
+      <span class="nav__text">Lojas</span>
     </a>
     <a href="/description.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">settings_suggest</i>
@@ -50,12 +50,12 @@
   </nav>
   <!-- Fim da Barra de Navegação -->
 
-  <!-- Label Produtos -->
+  <!-- Label Aceitos -->
   <div class="card mb-3">
     <div class="card-body">
       <h4 class="text-center font-weight-bold text-secondary">
         <i class="material-icons nav__icon">local_dining</i>
-        Produtos
+        Aceitos
       </h4>
       <!-- Menu de vizualização de itens em aberto e finalizados -->
       <div class="row mt-4">
@@ -63,7 +63,7 @@
           <a href="./index.html"class="btn text-success">
             <div class="row justify-content-center">
               <span class="btn-inner--icon mr-2"><i class="material-icons nav__icon">menu_book</i></span>
-              Mercadorias
+              Bandeiras
             </div>
           </a>
         </div>
@@ -74,19 +74,19 @@
           <a href="../Ingredients/index.html"class="btn text-secondary">
             <div class="row justify-content-center">
               <span class="btn-inner--icon mr-2"><i class="material-icons nav__icon">egg_alt</i></span>
-              Ingredientes
+              Locais
             </div>
           </a>
         </div>
       </div>
-      <!-- Fim menu de vizualização de pedidos em aberto e concluídos -->
+      <!-- Fim menu de vizualização de Estabelecimentos em aberto e concluídos -->
     </div>
   </div>
-  <!-- Fim Label Produtos -->
+  <!-- Fim Label Aceitos -->
 
   <a href="./productForm.html" class="d-flex justify-content-center text-justify btn btn-info ml-5 mr-5">
     <i class="material-icons nav__icon mr-2">add_shopping_cart</i>
-    Adicionar Produtos
+    Adicionar Aceitos
   </a>
 
   <!-- Animação representando que não existem dados -->
@@ -100,11 +100,11 @@
         autoplay
       />
     </div>
-    <h4 class="text-center font-weight-bold text-secondary">Não existem produtos</h4>
+    <h4 class="text-center font-weight-bold text-secondary">Não existem Aceitos</h4>
   </div>
   <!-- Fim animação representando que não existem dados -->
 
-  <!-- Listagem de Produtos -->
+  <!-- Listagem de Aceitos -->
   
   <div class="modal fade" id="modalSuccess" tabindex="-1" role="dialog" aria-labelledby="modal-default" style="display: none;" aria-modal="true">
     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">

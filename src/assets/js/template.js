@@ -1,7 +1,7 @@
 // Este arquivo armazena os modelos de cards e escreve os dados
 // nas telas que possuam dados registrados no LocalStorge
 
-// Função responsavel por escrever os cards de Clientes existentes
+// Função responsavel por escrever os cards de Lojas existentes
 // Referenciada no arquivo src/assets/js/client.js:18
 writeCardsClient = (clients) => {
   clients.forEach(client => {
@@ -40,7 +40,7 @@ writeCardsClient = (clients) => {
   document.body.appendChild(ele.firstChild)
 }
 
-// Função responsavel por escrever os cards de Ingredientes existentes
+// Função responsavel por escrever os cards de Locais existentes
 // Referenciada no arquivo src/assets/js/ingredients.js:16
 writeCardsIngredient = (ingredients) => {
   ingredients.forEach(ingredient => {
@@ -84,7 +84,7 @@ writeCardsIngredient = (ingredients) => {
   document.body.appendChild(ele.firstChild)
 }
 
-// Função responsavel por escrever os cards de Produtos existentes
+// Função responsavel por escrever os cards de Aceitos existentes
 // Referenciada no arquivo src/assets/js/products.js:
 writeCardsProduct = (products) => {
   products.forEach(product => {
@@ -128,7 +128,7 @@ writeCardsProduct = (products) => {
   document.body.appendChild(ele.firstChild)
 }
 
-// Função responsavel por escrever os cards de Produtos existentes
+// Função responsavel por escrever os cards de Aceitos existentes
 // Referenciada no arquivo src/assets/js/requisition.js:
 writeCardsRequisitionOpen = (requisitions) => {
   requisitions.forEach(requisition => {
@@ -169,7 +169,7 @@ writeCardsRequisitionOpen = (requisitions) => {
   document.body.appendChild(ele.firstChild)
 }
 
-// Função responsavel por escrever os cards de Produtos existentes
+// Função responsavel por escrever os cards de Aceitos existentes
 // Referenciada no arquivo src/assets/js/requisition.js:
 writeCardsRequisitionChecked = (requisitions) => {
   requisitions.forEach(requisition => {

@@ -40,7 +40,7 @@ onFormClients = () => {
   $('#new').click((event) => { window.location.reload() })
 }
 
-// Função responsavel por validar se os registros de um novo cliente
+// Função responsavel por validar se os registros de um novo Loja
 clientVerify = () => {
   function handleSubmit(event) {
     event.preventDefault()
@@ -66,7 +66,7 @@ clientVerify = () => {
   form.addEventListener('submit', handleSubmit)
 }
 
-// Função responsavel pelo registro de um novo cliente no localStorage
+// Função responsavel pelo registro de um novo Loja no localStorage
 newClient = (data) => {
   clients = JSON.parse(localStorage.getItem('clients'))
   id = Math.random().toString().replace('0.', '')
@@ -80,7 +80,7 @@ newClient = (data) => {
   }
 }
 
-// Esta função identifica o cliente selecionado e antes de
+// Esta função identifica o Loja selecionado e antes de
 // redirecionar para a tela de detalhes os parametros são codificados
 // para não ficarem totalmente explicitos na url
 getClient = (id) => {
@@ -92,7 +92,7 @@ getClient = (id) => {
   window.location = `/src/views/Clients/detailsClients.html?params=${ btoa( `${ JSON.stringify(clientId) }` ) }`
 }
 
-// Esta função identifica o cliente com base nos parametros passados na url
+// Esta função identifica o Loja com base nos parametros passados na url
 // descriptografa os registros e cria na os elementos na view 
 datailsClient = () => {
   params = JSON.parse(atob(getParams))
@@ -108,11 +108,11 @@ datailsClient = () => {
   $('#btnEditClient').click((event) => window.location = url )
 }
 
-// Esta função recebe os dados do cliente com base 
+// Esta função recebe os dados do Loja com base 
 // nos parametros passados na url e preenche o formulario
 editClient = () => {
   onFormClients()
-  document.getElementById('label').innerHTML= 'Editar Cliente'
+  document.getElementById('label').innerHTML= 'Editar Loja'
   params = JSON.parse(atob(getParams))
 
   document.getElementById('name').value = `${params.data.name}`

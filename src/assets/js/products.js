@@ -61,7 +61,7 @@ newProduct = () => {
   form.addEventListener('submit', handleSubmit)
 }
 
-// Essa função tem como objetivo filtrar Ingredientes
+// Essa função tem como objetivo filtrar Locais
 // e adicionar os itens ao select para criação de um Produto
 fillSelect = () => {
   ingredients = JSON.parse(localStorage.getItem('ingredients'))

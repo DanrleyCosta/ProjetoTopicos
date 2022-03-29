@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>GG - Gestão Gastrô</title>
+  <title>Cê Aceita</title>
 
   <!--  Importação do Manifesto  -->
   <link rel="manifest" href="../../../manifest.json">
@@ -34,15 +34,15 @@
   <nav class="nav">
     <a href="../../../index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">receipt</i>
-      <span class="nav__text">Pedidos</span>
+      <span class="nav__text">Estabelecimentos</span>
     </a>
     <a href="./productForm.html" class="nav__link nav__link--active">
       <i class="material-icons nav__icon">local_dining</i>
-      <span class="nav__text font-weight-bold">Produtos</span>
+      <span class="nav__text font-weight-bold">Aceitos</span>
     </a>
     <a href="../Clients/index.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">people_alt</i>
-      <span class="nav__text">Clientes</span>
+      <span class="nav__text">Lojas</span>
     </a>
     <a href="/description.html" class="nav__link nav__link--desabled">
       <i class="material-icons nav__icon">settings_suggest</i>
@@ -72,9 +72,9 @@
     <div class="card-body">
       <form>
         <small class="d-block font-weight-bold mb-2">Nome:</small>
-        <input required autofocus id="name" name="name" type="text" placeholder="Bolo de Laranja" class="form-control mb-4">
+        <input required autofocus id="name" name="name" type="text" placeholder="ex MasterCard" class="form-control mb-4">
         
-        <small class="d-block font-weight-bold mb-2">Ingrediente:</small>
+        <small class="d-block font-weight-bold mb-2">Bandeira:</small>
         <select id="ingredientList" class="form-control" multiple data-live-search="true"></select>
         
         <div class="d-flex justify-content-center mt-5 mb-3">
@@ -107,7 +107,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button id="return" type="button" class="btn btn-info" data-dismiss="modal">Ver Produtos</button>
+          <button id="return" type="button" class="btn btn-info" data-dismiss="modal">Ver Aceitos</button>
         </div>
       </div>
     </div>

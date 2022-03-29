@@ -41,7 +41,7 @@ self.addEventListener('install', function (event) {
       '/src/assets/image/user.svg',
       '/src/assets/image/west_arrow.svg',
       /* ---- Icons ---- */
-      '/src/assets/image/icons/android-icon-144-144.png',
+      '/src/assets/image/icons/logo144144.png',
       '/src/assets/image/icons/android-icon-192-192.png',
       '/src/assets/image/icons/android-icon-48-48.png',
       '/src/assets/image/icons/android-icon-512-512.png',
